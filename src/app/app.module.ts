@@ -27,6 +27,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { JobComponent } from './job/job.component';
 import { PersonalityComponent } from './personality/personality.component';
+import { AppRoutingModule } from './app-routing.module';
 
 const routes = [
   {path: 'register', component: RegistrationComponent}
@@ -55,6 +56,7 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     RouterModule.forRoot(routes),
+    AppRoutingModule,
     BrowserAnimationsModule
   ],
   providers: [AuthService],
