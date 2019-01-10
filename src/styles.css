@@ -34,13 +34,13 @@ a:link {
 }
   
 a:visited{
-    color: white;
+    color: rgb(200, 5, 5);
     text-decoration: none;
     font-family: 'Bungee', cursive;
 }
   
 a:hover{
-    color: darkslategrey;
+    color: darkgrey;
     text-decoration: none;
     font-family: 'Bungee', cursive;
 }
@@ -63,6 +63,7 @@ h2{
 
 h4{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
 }
 
 /*Main*/
