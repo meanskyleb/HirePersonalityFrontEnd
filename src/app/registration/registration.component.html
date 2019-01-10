@@ -1,7 +1,8 @@
 <h1>Registration</h1>
-<h4>Create A New Account</h4>
+
 <hr>
 
+<div class="registrationForm">
 <form (ngSubmit)="onSubmit()" [formGroup]="_registerForm">
   <div>
     <div>
@@ -28,3 +29,4 @@
   <br>
 <span class="help-block">Already have an account? <a routerLink='/login'> Login</a></span>
 </form>
+</div>
