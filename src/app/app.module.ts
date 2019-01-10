@@ -19,6 +19,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 
 
+
+
 //Services
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
@@ -27,9 +29,17 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { JobComponent } from './job/job.component';
 import { PersonalityComponent } from './personality/personality.component';
+import { AppRoutingModule } from './app-routing.module';
 
 const routes = [
-  {path: 'register', component: RegistrationComponent}
+  {path: 'registration', component: RegistrationComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'job', component: JobComponent},
+  {path: 'personality', component: PersonalityComponent},
+  {path: 'contact', component: ContactComponent}
 ];
 
 
@@ -55,6 +65,7 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     RouterModule.forRoot(routes),
+    AppRoutingModule,
     BrowserAnimationsModule
   ],
   providers: [AuthService],
