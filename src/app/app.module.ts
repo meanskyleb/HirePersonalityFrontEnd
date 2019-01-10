@@ -9,6 +9,7 @@ import {
   MatFormFieldModule,
   MatInputModule
  } from '@angular/material';
+
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -20,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 
 //Services
 import { AuthService } from './services/auth.service';
+
 
 @NgModule({
   declarations: [
