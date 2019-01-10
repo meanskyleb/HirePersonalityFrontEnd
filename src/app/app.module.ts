@@ -29,7 +29,7 @@ import { JobComponent } from './job/job.component';
 import { PersonalityComponent } from './personality/personality.component';
 
 const routes = [
-  {path: 'register', component: RegistrationComponent}
+  {path: 'register', component: RegistrationComponent}git 
 ];
 
 
