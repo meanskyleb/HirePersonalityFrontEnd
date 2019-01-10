@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import {HttpClient } from '@angular/common/http';
 
 
 
@@ -33,6 +34,6 @@ export class RegistrationComponent implements OnInit {
     console.log(this._registerForm.value);
     this._authService
     .register(this._registerForm.value)
-    .subscribe( () => console.log('you did it'));
+    .subscribe( () => this._authService.login(this._registerForm.value));
   }
 }

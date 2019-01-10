@@ -23,31 +23,10 @@ export class AuthService {
       return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData)
     }
     
-   
-  // login(loginInfo) {
-  //   const str =
-  //   `grant_type=password&email=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
-  
-  //   return this._http.post(`${Api_Url}`, str).subscribe((token: Token) => {
-  //     this.userInfo = token;
-  //     localStorage.setItem('token', token.token);
-  //     this.isLoggedIn.next(true);
-  //     this._router.navigate(['/']);
-  //   });}
-
-  //   private setHeader(): HttpHeaders {
-  //     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
-  //   }
-
-  //   logout() {
-  //     localStorage.clear();
-  //     this.isLoggedIn.next(false);
-
-  //     const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-
-  //     this._http.post(`${Api_Url}/api/Account/Logout`, { headers: authHeader});
-  //     this._router.navigate(['/login']);
-  //   }
-    
+    login(loginInfo) {
+      return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
+        localStorage.setItem('token', token.token);
+      })
+    }
 }
 
