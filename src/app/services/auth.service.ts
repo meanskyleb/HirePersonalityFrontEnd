@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Token } from '../Models/Token';
 import { UserInfo } from '../Models/UserInfo';
 import { Router } from '@angular/router';
@@ -17,7 +17,7 @@ export class AuthService {
   loginInfo: UserInfo;
  
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient, private _router:Router) { }
 
     register(regUserData: RegisterUser) {
       return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData)
@@ -26,7 +26,19 @@ export class AuthService {
     login(loginInfo) {
       return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
         localStorage.setItem('token', token.token);
+        this.isLoggedIn.next(true);
+        this._router.navigate(['/home'])
       })
+    }
+
+    logout() {
+      localStorage.clear();
+      this.isLoggedIn.next(false);
+
+      const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    
+      this._http.post(`${Api_Url}/api/Account/Logout`, {headers: authHeader});
+      this._router.navigate(['/login'])
     }
 }
 
