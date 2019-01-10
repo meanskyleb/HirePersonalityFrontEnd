@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'profile', canActivate: [], component: ProfileComponent},
-  { path: 'register', component: RegistrationComponent },
+  { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'job', component: JobComponent },
   { path: 'perosnality', component: PersonalityComponent }
