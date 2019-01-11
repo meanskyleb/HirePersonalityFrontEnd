@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { RegisterUser } from '../Models/RegisterUser';
 import { FormGroup } from '@angular/forms';
+import { ObserversModule } from '@angular/cdk/observers';
+
 
 const Api_Url = "https://localhost:44311";
 
@@ -17,7 +19,7 @@ export class AuthService {
   loginInfo: UserInfo;
  
 
-  constructor(private _http: HttpClient, private _router:Router) { }
+  constructor(private _http: HttpClient, private _router:Router ) { }
 
     register(regUserData: RegisterUser) {
       return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData)
@@ -30,6 +32,12 @@ export class AuthService {
         this._router.navigate(['/home'])
       })
     }
+
+    currentUser() :boolean {
+      if(!localStorage.getItem('token')) {return false;}
+      return true;
+    }
+
 
     logout() {
       localStorage.clear();
