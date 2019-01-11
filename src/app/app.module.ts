@@ -7,7 +7,7 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
  } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +31,7 @@ import { PersonalityService } from './services/personalityservice/personality.se
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { JobCreateComponent } from './job/job-create/job-create.component';
+import { PersonalityDetailComponent } from './personality/personality-detail/personality-detail.component';
 
 //Services
 import { AuthService } from './services/auth.service';
@@ -46,7 +47,9 @@ const routes = [
   {path: 'contact', component: ContactComponent},
   {
     path: 'personality', children: [
-      { path: 'create', component: PersonalityCreateComponent }
+      { path: '', component: PersonalityIndexComponent },
+      { path: 'create', component: PersonalityCreateComponent },
+      { path: 'detail/:id', component: PersonalityDetailComponent }
     ]
   },
   {path: 'job',children: [
@@ -75,7 +78,8 @@ const routes = [
     PersonalityIndexComponent,
     JobCreateComponent,
     JobDetailComponent
-
+    PersonalityDetailComponent,
+    PersonalityIndexComponent
   ],
   imports: [
     BrowserModule,
