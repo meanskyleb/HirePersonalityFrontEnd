@@ -35,6 +35,7 @@ import { PersonalityDetailComponent } from './personality/personality-detail/per
 
 //Services
 import { AuthService } from './services/auth.service';
+import { JobDetailComponent } from './job/job-detail/job-detail.component';
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -42,8 +43,6 @@ const routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
-  
-  {path: 'personality', component: PersonalityComponent},
   {path: 'contact', component: ContactComponent},
   {
     path: 'personality', children: [
@@ -76,6 +75,7 @@ const routes = [
     JobIndexComponent,
     PersonalityCreateComponent,
     PersonalityIndexComponent,
+    JobDetailComponent
     JobCreateComponent,
     JobDetailComponent
     PersonalityDetailComponent,
