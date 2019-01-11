@@ -7,7 +7,7 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
  } from '@angular/material';
 
 import { RouterModule } from '@angular/router';
@@ -35,6 +35,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
 import { PersonalityService } from './services/personalityservice/personality.service';
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
+import { PersonalityDetailComponent } from './personality/personality-detail/personality-detail.component';
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -47,7 +48,9 @@ const routes = [
   {path: 'contact', component: ContactComponent},
   {
     path: 'personality', children: [
-      { path: 'create', component: PersonalityCreateComponent }
+      { path: '', component: PersonalityIndexComponent },
+      { path: 'create', component: PersonalityCreateComponent },
+      { path: 'detail/:id', component: PersonalityDetailComponent }
     ]
   },
   { path: '**', component: RegistrationComponent }
@@ -68,7 +71,8 @@ const routes = [
     HeaderComponent,
     FooterComponent,
     PersonalityCreateComponent,
-    PersonalityIndexComponent
+    PersonalityIndexComponent,
+    PersonalityDetailComponent
   ],
   imports: [
     BrowserModule,
