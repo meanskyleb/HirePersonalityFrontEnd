@@ -1,5 +1,6 @@
-export interface job {
-    EntityId: number;
+
+export interface Job {
+    JobEntityId: number;
 
     Name: string;
 
