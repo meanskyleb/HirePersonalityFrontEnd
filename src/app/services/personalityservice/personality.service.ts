@@ -25,4 +25,9 @@ private getHeaders() {
 createPersonality(personality: Personality) {
   return this._http.post(`${ApiUrl}/personality`, personality, { headers: this.getHeaders()});
 }
+
+
+getPersonalitybyId(id: string) {
+  return this._http.get(`${ApiUrl}/personality/${id}`, { headers: this.getHeaders() });
+}
 }
