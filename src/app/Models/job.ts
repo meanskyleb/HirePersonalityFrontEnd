@@ -1,3 +1,4 @@
+
 export interface Job {
     JobEntityId: number;
 
