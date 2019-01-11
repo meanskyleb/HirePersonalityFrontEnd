@@ -13,7 +13,7 @@ export class JobIndexComponent implements OnInit {
 
   constructor(private _jobService: JobService) { }
   
-  coulumnNames = ['JobEntityId', 'JobName','JobCompany','JobDesc','JobCompensation', 'JobHours', 'JobDesiredPersonality', 'OwnerId']
+  coulumnNames = ['EntityId', 'Name','Company','Desc','Compensation', 'Hours', 'DesiredPersonality', 'OwnerId']
 
   dataSource: MatTableDataSource<job>
 
