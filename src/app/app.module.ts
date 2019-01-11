@@ -31,6 +31,7 @@ import { JobComponent } from './job/job.component';
 import { PersonalityComponent } from './personality/personality.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -55,7 +56,8 @@ const routes = [
     AboutComponent,
     JobComponent,
     PersonalityComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
