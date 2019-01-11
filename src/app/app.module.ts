@@ -32,6 +32,9 @@ import { PersonalityComponent } from './personality/personality.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
+import { PersonalityService } from './services/personalityservice/personality.service';
+import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -41,7 +44,13 @@ const routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'job', component: JobComponent},
   {path: 'personality', component: PersonalityComponent},
-  {path: 'contact', component: ContactComponent}
+  {path: 'contact', component: ContactComponent},
+  {
+    path: 'personality', children: [
+      { path: 'create', component: PersonalityCreateComponent }
+    ]
+  },
+  { path: '**', component: RegistrationComponent }
 ];
 
 
@@ -57,7 +66,9 @@ const routes = [
     JobComponent,
     PersonalityComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PersonalityCreateComponent,
+    PersonalityIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +83,11 @@ const routes = [
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    PersonalityService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
