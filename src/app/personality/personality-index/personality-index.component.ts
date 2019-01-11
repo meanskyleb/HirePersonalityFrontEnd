@@ -9,7 +9,11 @@ export class PersonalityIndexComponent implements OnInit {
 
   constructor() { }
 
+
+
   ngOnInit() {
   }
 
 }
+
+
