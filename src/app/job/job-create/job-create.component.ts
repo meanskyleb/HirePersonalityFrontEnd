@@ -15,11 +15,11 @@ export class JobCreateComponent implements OnInit {
   jobForm: FormGroup;
 
   constructor(private _jobService: JobService, private _form: FormBuilder, private _router: Router) {
-    this.createForm();
+    
    }
 
   ngOnInit() {
-  }
+  this.createForm();}
 
 
  createForm() {
@@ -35,7 +35,7 @@ export class JobCreateComponent implements OnInit {
 
   onSubmit() {
     this._jobService.createJob(this.jobForm.value).subscribe(data => {
-      this._router.navigate(['/jobs']);
+      this._router.navigate(['/job']);
     })
   }
 }

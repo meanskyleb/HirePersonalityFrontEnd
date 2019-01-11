@@ -29,11 +29,11 @@ import { JobIndexComponent } from './job/job-index/job-index.component';
 import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
 import { PersonalityService } from './services/personalityservice/personality.service';
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
+import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
+import { JobCreateComponent } from './job/job-create/job-create.component';
 
 //Services
 import { AuthService } from './services/auth.service';
-import { JobCreateComponent } from './job/job-create/job-create.component';
-import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -50,9 +50,9 @@ const routes = [
     ]
   },
   {path: 'job',children: [
-      {path: 'job', component: JobIndexComponent},
-      {path: 'job/create', component: JobCreateComponent},
-      {path: 'job/:id', component: JobDetailComponent}
+      {path: '', component: JobIndexComponent},
+      {path: 'create', component: JobCreateComponent},
+      {path: 'details', component: JobDetailComponent}
   ]},
 ];
 
