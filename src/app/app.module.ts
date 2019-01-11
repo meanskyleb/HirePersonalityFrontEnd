@@ -25,12 +25,10 @@ import { JobComponent } from './job/job.component';
 import { PersonalityComponent } from './personality/personality.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { JobIndexComponent } from './job/job-index/job-index.component';
 import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
 import { PersonalityService } from './services/personalityservice/personality.service';
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
-
-
-
 
 //Services
 import { AuthService } from './services/auth.service';
@@ -66,8 +64,10 @@ const routes = [
     PersonalityComponent,
     HeaderComponent,
     FooterComponent,
+    JobIndexComponent,
     PersonalityCreateComponent,
     PersonalityIndexComponent
+
   ],
   imports: [
     BrowserModule,
