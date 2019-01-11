@@ -32,6 +32,7 @@ import { PersonalityIndexComponent } from './personality/personality-index/perso
 
 //Services
 import { AuthService } from './services/auth.service';
+import { JobDetailComponent } from './job/job-detail/job-detail.component';
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -67,7 +68,8 @@ const routes = [
     FooterComponent,
     JobIndexComponent,
     PersonalityCreateComponent,
-    PersonalityIndexComponent
+    PersonalityIndexComponent,
+    JobDetailComponent
 
   ],
   imports: [
