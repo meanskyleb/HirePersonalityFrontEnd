@@ -1,17 +1,17 @@
-export interface job {
+export interface Job {
     JobEntityId: number;
 
-    JobName: string;
+    Name: string;
 
-    JobCompany: string;
+    Company: string;
 
-    JobDesc: string;
+    Desc: string;
 
-    JobCompensation: string;
+    Compensation: string;
 
-    JobHours: string;
+    Hours: string;
 
-    JobDesiredPersonality: string;
+    DesiredPersonality: string;
 
     OwnerId: number;
 }
