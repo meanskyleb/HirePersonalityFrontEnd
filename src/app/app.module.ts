@@ -41,6 +41,7 @@ const routes = [
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'job', component: JobComponent},
+  {path: 'job', component: JobIndexComponent},
   {path: 'personality', component: PersonalityComponent},
   {path: 'contact', component: ContactComponent}
 ];
