@@ -9,30 +9,29 @@ import {
   MatFormFieldModule,
   MatInputModule
  } from '@angular/material';
-
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
 
 //Components
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
-
-
-
-
-//Services
-import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { JobComponent } from './job/job.component';
 import { PersonalityComponent } from './personality/personality.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { JobIndexComponent } from './job/job-index/job-index.component';
+import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
+import { PersonalityService } from './services/personalityservice/personality.service';
+import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
+
+//Services
+import { AuthService } from './services/auth.service';
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -43,7 +42,13 @@ const routes = [
   {path: 'job', component: JobComponent},
   {path: 'job', component: JobIndexComponent},
   {path: 'personality', component: PersonalityComponent},
-  {path: 'contact', component: ContactComponent}
+  {path: 'contact', component: ContactComponent},
+  {
+    path: 'personality', children: [
+      { path: 'create', component: PersonalityCreateComponent }
+    ]
+  },
+  { path: '**', component: RegistrationComponent }
 ];
 
 
@@ -60,7 +65,10 @@ const routes = [
     PersonalityComponent,
     HeaderComponent,
     FooterComponent,
-    JobIndexComponent
+    JobIndexComponent,
+    PersonalityCreateComponent,
+    PersonalityIndexComponent
+
   ],
   imports: [
     BrowserModule,
@@ -73,9 +81,13 @@ const routes = [
     MatInputModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    PersonalityService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
