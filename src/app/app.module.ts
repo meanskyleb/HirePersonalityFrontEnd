@@ -29,13 +29,13 @@ import { JobIndexComponent } from './job/job-index/job-index.component';
 import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
 import { PersonalityService } from './services/personalityservice/personality.service';
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
-import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { JobCreateComponent } from './job/job-create/job-create.component';
 import { PersonalityDetailComponent } from './personality/personality-detail/personality-detail.component';
+import { JobDetailComponent } from './job/job-detail/job-detail.component';
 
 //Services
 import { AuthService } from './services/auth.service';
-import { JobDetailComponent } from './job/job-detail/job-detail.component';
+
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -75,9 +75,9 @@ const routes = [
     JobIndexComponent,
     PersonalityCreateComponent,
     PersonalityIndexComponent,
-    JobDetailComponent
+    JobDetailComponent,
     JobCreateComponent,
-    JobDetailComponent
+    JobDetailComponent,
     PersonalityDetailComponent,
     PersonalityIndexComponent
   ],

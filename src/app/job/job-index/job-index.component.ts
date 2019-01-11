@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
-import { job } from 'src/app/Models/job';
+import { Job } from 'src/app/Models/job';
 import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/table';
 
@@ -15,10 +15,10 @@ export class JobIndexComponent implements OnInit {
   
   coulumnNames = ['EntityId', 'Name','Company','Desc','Compensation', 'Hours', 'DesiredPersonality', 'OwnerId']
 
-  dataSource: MatTableDataSource<job>
+  dataSource: MatTableDataSource<Job>
 
   ngOnInit() {
-    this._jobService.getJobs().subscribe((jobs: job[]) => {
-    this.dataSource = new MatTableDataSource<job>(jobs) });
+    this._jobService.getJobs().subscribe((jobs: Job[]) => {
+    this.dataSource = new MatTableDataSource<Job>(jobs) });
   }
 }
