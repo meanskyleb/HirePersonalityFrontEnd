@@ -20,9 +20,14 @@ export class JobService {
    }
 
   private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer $(localStorage.getItem('id_token')}`)
+    return new HttpHeaders().set('Authorization', `Bearer $(localStorage.getItem('id_token')}`);
   }
   getJob(id: string) {
     return this._http.get(`${ApiUrl}/job/${id}`, { headers: this.getHeaders() });
   }
+
+  deleteJob(id: number) {
+    return this._http.delete(`${ApiUrl}/job/${id}`, { headers: this.getHeaders()});
+  }
+  
 }

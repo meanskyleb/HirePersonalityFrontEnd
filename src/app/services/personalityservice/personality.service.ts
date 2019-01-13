@@ -30,4 +30,8 @@ createPersonality(personality: Personality) {
 getPersonalitybyId(id: string) {
   return this._http.get(`${ApiUrl}/personality/${id}`, { headers: this.getHeaders() });
 }
+
+deletePersonality(id: number) {
+  return this._http.delete(`${ApiUrl}/Personality${id}`, {headers: this.getHeaders()});
+}
 }

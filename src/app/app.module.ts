@@ -35,6 +35,8 @@ import { JobDetailComponent } from './job/job-detail/job-detail.component';
 
 //Services
 import { AuthService } from './services/auth.service';
+import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
+import { JobDeleteComponent } from './job/job-delete/job-delete.component';
 
 
 const routes = [
@@ -48,13 +50,16 @@ const routes = [
     path: 'personality', children: [
       { path: '', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
-      { path: 'detail/:id', component: PersonalityDetailComponent }
+      { path: 'detail/:id', component: PersonalityDetailComponent },
+      { path: 'delete/:id', component: PersonalityDeleteComponent }
     ]
   },
   {path: 'job',children: [
       {path: '', component: JobIndexComponent},
       {path: 'create', component: JobCreateComponent},
-      {path: 'details', component: JobDetailComponent}
+      {path: 'details/:id', component: JobDetailComponent},
+      {path: 'delete/:id', component: JobDeleteComponent}
+
   ]},
 ];
 
@@ -79,7 +84,9 @@ const routes = [
     JobCreateComponent,
     JobDetailComponent,
     PersonalityDetailComponent,
-    PersonalityIndexComponent
+    PersonalityIndexComponent,
+    PersonalityDeleteComponent,
+    JobDeleteComponent
   ],
   imports: [
     BrowserModule,
