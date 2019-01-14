@@ -86,8 +86,7 @@ const routes = [
     PersonalityCreateComponent,
     PersonalityIndexComponent,
     PersonalityDetailComponent,
-    PersonalityEditComponent
-    JobDetailComponent,
+    PersonalityEditComponent,
     JobCreateComponent,
     JobDetailComponent,
     PersonalityDetailComponent,

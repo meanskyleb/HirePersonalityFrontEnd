@@ -40,5 +40,5 @@ deletePersonality(id: number) {
   return this._http.delete(`${ApiUrl}/Personality${id}`, {headers: this.getHeaders()});
 }
 
-}
+
 }
