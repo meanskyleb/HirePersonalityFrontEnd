@@ -55,14 +55,14 @@ const routes = [
   {path: 'contact', component: ContactComponent},
   {
     path: 'personality', children: [
-      { path: '', component: PersonalityIndexComponent },
+      { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
       { path: 'detail/:id', component: PersonalityDetailComponent },
       { path: 'delete/:id', component: PersonalityDeleteComponent }
     ]
   },
   {path: 'job',children: [
-      {path: '', component: JobIndexComponent},
+      {path: 'index', component: JobIndexComponent},
       {path: 'create', component: JobCreateComponent},
       {path: 'details/:id', component: JobDetailComponent},
       {path: 'delete/:id', component: JobDeleteComponent}
