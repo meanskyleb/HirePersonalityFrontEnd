@@ -16,7 +16,7 @@ export class JobService {
   }
 
   createJob(job: Job) {
-    return this._http.post(`${ApiUrl}/Job`, job, { headers:  this.getHeaders()});
+    return this._http.post(`${ApiUrl}/job`, job, { headers:  this.getHeaders()});
    }
 
   private getHeaders() {
@@ -28,6 +28,10 @@ export class JobService {
 
   deleteJob(id: number) {
     return this._http.delete(`${ApiUrl}/job/${id}`, { headers: this.getHeaders()});
+  }
+
+  updateJob(job: Job){
+    return this._http.put(`${ApiUrl}/job`, job, { headers: this.getHeaders() });
   }
   
 }

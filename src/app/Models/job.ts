@@ -1,6 +1,6 @@
 
 export interface Job {
-    JobEntityId: number;
+    EntityId: number;
 
     Name: string;
 

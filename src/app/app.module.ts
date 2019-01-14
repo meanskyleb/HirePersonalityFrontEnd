@@ -37,6 +37,7 @@ import { JobDetailComponent } from './job/job-detail/job-detail.component';
 import { AuthService } from './services/auth.service';
 import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
 import { JobDeleteComponent } from './job/job-delete/job-delete.component';
+import { JobUpdateComponent } from './job/job-update/job-update.component';
 
 
 const routes = [
@@ -86,7 +87,8 @@ const routes = [
     PersonalityDetailComponent,
     PersonalityIndexComponent,
     PersonalityDeleteComponent,
-    JobDeleteComponent
+    JobDeleteComponent,
+    JobUpdateComponent
   ],
   imports: [
     BrowserModule,
