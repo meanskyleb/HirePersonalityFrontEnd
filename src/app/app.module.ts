@@ -14,8 +14,6 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
-import { Observable } from 'rxjs';
-
 //Components
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -112,8 +110,7 @@ const routes = [
     MatTableModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
-    BrowserAnimationsModule,
-    Observable
+    BrowserAnimationsModule
   ],
   providers: [
     AuthService,
