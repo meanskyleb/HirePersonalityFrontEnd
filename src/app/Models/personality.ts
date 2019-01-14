@@ -1,4 +1,4 @@
 export interface Personality {
-    PersonalityId?: number;
+    PersonalityId: number;
     PersonalityType: number;
 }

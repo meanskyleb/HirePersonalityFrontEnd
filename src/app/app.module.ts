@@ -7,7 +7,7 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
  } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,10 +29,20 @@ import { JobIndexComponent } from './job/job-index/job-index.component';
 import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
 import { PersonalityService } from './services/personalityservice/personality.service';
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
+import { JobCreateComponent } from './job/job-create/job-create.component';
+import { PersonalityDetailComponent } from './personality/personality-detail/personality-detail.component';
+import { PersonalityEditComponent } from './personality/personality-edit/personality-edit.component';
+import { JobDetailComponent } from './job/job-detail/job-detail.component';
+import { JobDeleteComponent } from './job/job-delete/job-delete.component';
+import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
+
 
 //Services
 import { AuthService } from './services/auth.service';
-import { JobDetailComponent } from './job/job-detail/job-detail.component';
+
+
+
+
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -40,16 +50,22 @@ const routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'job', component: JobComponent},
-  {path: 'job', component: JobIndexComponent},
-  {path: 'personality', component: PersonalityComponent},
   {path: 'contact', component: ContactComponent},
   {
     path: 'personality', children: [
-      { path: 'create', component: PersonalityCreateComponent }
+      { path: '', component: PersonalityIndexComponent },
+      { path: 'create', component: PersonalityCreateComponent },
+      { path: 'detail/:id', component: PersonalityDetailComponent },
+      { path: 'delete/:id', component: PersonalityDeleteComponent }
     ]
   },
-  { path: '**', component: RegistrationComponent }
+  {path: 'job',children: [
+      {path: '', component: JobIndexComponent},
+      {path: 'create', component: JobCreateComponent},
+      {path: 'details/:id', component: JobDetailComponent},
+      {path: 'delete/:id', component: JobDeleteComponent}
+
+  ]},
 ];
 
 
@@ -69,8 +85,15 @@ const routes = [
     JobIndexComponent,
     PersonalityCreateComponent,
     PersonalityIndexComponent,
-    JobDetailComponent
-
+    PersonalityDetailComponent,
+    PersonalityEditComponent
+    JobDetailComponent,
+    JobCreateComponent,
+    JobDetailComponent,
+    PersonalityDetailComponent,
+    PersonalityIndexComponent,
+    PersonalityDeleteComponent,
+    JobDeleteComponent
   ],
   imports: [
     BrowserModule,

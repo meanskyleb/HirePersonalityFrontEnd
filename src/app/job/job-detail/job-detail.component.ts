@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { JobService } from 'src/app/services/job.service';
-import { job } from 'src/app/Models/job';
+import { Job } from 'src/app/Models/job';
 
 @Component({
   selector: 'app-job-detail',
@@ -9,7 +9,8 @@ import { job } from 'src/app/Models/job';
   styleUrls: ['./job-detail.component.css']
 })
 export class JobDetailComponent implements OnInit {
-job: job;
+  job: Job;
+
   constructor(private _activatedRoute: ActivatedRoute, private _jobService: JobService) { }
 
   ngOnInit() {
