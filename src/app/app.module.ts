@@ -8,10 +8,13 @@ import {
   MatToolbarModule,
   MatFormFieldModule,
   MatInputModule,
+  MatTableModule
  } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+
+import { Observable } from 'rxjs';
 
 //Components
 import { AppComponent } from './app.component';
@@ -21,26 +24,27 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { JobComponent } from './job/job.component';
-import { PersonalityComponent } from './personality/personality.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { JobIndexComponent } from './job/job-index/job-index.component';
-import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
-import { PersonalityService } from './services/personalityservice/personality.service';
+import { PersonalityComponent } from './personality/personality.component';
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
-import { JobCreateComponent } from './job/job-create/job-create.component';
+import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
 import { PersonalityDetailComponent } from './personality/personality-detail/personality-detail.component';
 import { PersonalityEditComponent } from './personality/personality-edit/personality-edit.component';
-import { JobDetailComponent } from './job/job-detail/job-detail.component';
-import { JobDeleteComponent } from './job/job-delete/job-delete.component';
 import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
-
+import { JobComponent } from './job/job.component';
+import { JobIndexComponent } from './job/job-index/job-index.component';
+import { JobCreateComponent } from './job/job-create/job-create.component';
+import { JobDetailComponent } from './job/job-detail/job-detail.component';
+import { JobUpdateComponent } from './job/job-update/job-update.component';
+import { JobDeleteComponent } from './job/job-delete/job-delete.component';
 
 //Services
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guards';
-import { Observable } from 'rxjs';
+import { PersonalityService } from './services/personalityservice/personality.service';
+import { JobService } from './services/job.service';
+
 
 
 
@@ -54,15 +58,16 @@ const routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'contact', component: ContactComponent},
   {
-    path: 'personality', canActivate: [AuthGuard] , children: [
-      { path: '', component: PersonalityIndexComponent },
+
+    path: 'personality', children: [
+      { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
       { path: 'detail/:id', component: PersonalityDetailComponent },
       { path: 'delete/:id', component: PersonalityDeleteComponent }
     ]
   },
   {path: 'job',children: [
-      {path: '', component: JobIndexComponent},
+      {path: 'index', component: JobIndexComponent},
       {path: 'create', component: JobCreateComponent},
       {path: 'details/:id', component: JobDetailComponent},
       {path: 'delete/:id', component: JobDeleteComponent}
@@ -80,20 +85,19 @@ const routes = [
     ProfileComponent,
     ContactComponent,
     AboutComponent,
-    JobComponent,
-    PersonalityComponent,
     HeaderComponent,
     FooterComponent,
-    JobIndexComponent,
-    PersonalityCreateComponent,
+    PersonalityComponent,
     PersonalityIndexComponent,
+    PersonalityCreateComponent,
     PersonalityDetailComponent,
     PersonalityEditComponent,
+    PersonalityDeleteComponent,
+    JobComponent,
+    JobIndexComponent,
     JobCreateComponent,
     JobDetailComponent,
-    PersonalityDetailComponent,
-    PersonalityIndexComponent,
-    PersonalityDeleteComponent,
+    JobUpdateComponent,
     JobDeleteComponent
   ],
   imports: [
@@ -105,6 +109,7 @@ const routes = [
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -113,7 +118,8 @@ const routes = [
   providers: [
     AuthService,
     AuthGuard,
-    PersonalityService
+    PersonalityService,
+    JobService
   ],
 
   bootstrap: [AppComponent]

@@ -1,63 +1,63 @@
 <h1>Index</h1>
-<a  mat-raised-button color="primary">Create New</a>
+<a routerLink="/job/create"mat-raised-button color="primary">Create New</a>
 <hr>
 
 <div>
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames"></mat-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
     <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef class="matCoulumnSize"></mat-header-cell>
-      <mat-cell *MatCellDef="let job" routerLink="/job/detail/{{job.EntityId}}"> 
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let row" routerLink="/job/id/{{row.JobEntityId}}"> 
         <i class="material-icons">library_books</i>
       </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="EntityId">
+    <ng-container matColumnDef="JobEntityId">
       <mat-header-cell *matHeaderCellDef>Job #</mat-header-cell>
-      <mat-cell *MatCellDef="let job"> {{job.EntityId}} </mat-cell>
+      <mat-cell *matCellDef="let job"> {{job.jobEntityId}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Name">
       <mat-header-cell *matHeaderCellDef>Job Name</mat-header-cell>
-      <mat-cell *MatCellDef="let job"> {{job.Name}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Company">
-      <mat-header-cell *matHeaderCellDef>Compnay Name</mat-header-cell>
-      <mat-cell *MatCellDef="let job"> {{job.Company}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Company Name</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.company}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Desc">
       <mat-header-cell *matHeaderCellDef>Job Description</mat-header-cell>
-      <mat-cell *MatCellDef="let job"> {{job.Desc}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.desc}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Compensation">
-      <mat-header-cell *matHeaderCellDef>Compensation for Job</mat-header-cell>
-      <mat-cell *MatCellDef="let job"> {{job.Compensation}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Compensation</mat-header-cell>
+      <mat-cell *matCellDef="let row"> ${{row.compensation}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Hours">
       <mat-header-cell *matHeaderCellDef>Hours/Week</mat-header-cell>
-      <mat-cell *MatCellDef="let job"> {{job.Hours}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.hours}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="DesiredPersonality">
       <mat-header-cell *matHeaderCellDef>Desired Personality from Test</mat-header-cell>
-      <mat-cell *MatCellDef="let job"> {{job.DesiredPersonality}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.desiredPersonality}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="OwnerId">
       <mat-header-cell *matHeaderCellDef>Owner #</mat-header-cell>
-      <mat-cell *MatCellDef="let job"> {{job.OwnerId}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.ownerId}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
-      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-      <mat-cell *MatCellDef="let job">
-        <i mat-icon class="material-icons">edit</i>
+      <mat-header-cell *matHeaderCellDef>    </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <i mat-icon class="material-icons" routerLink="job/id/{{row.EntityId}}">edit</i>
         <i class="material-icons">delete</i>
       </mat-cell>
     </ng-container>
