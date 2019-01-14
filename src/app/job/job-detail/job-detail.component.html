@@ -1,0 +1,41 @@
+<h1>Details</h1>
+
+<hr>
+<div *ngIf="job">
+  <div>
+    <label for="">EntityId:</label>
+    <span>{{job.EntiityId}}</span>
+  </div>
+  <div>
+    <label for="">Name:</label>
+    <span>{{job.Name}}</span>
+  </div>
+  <div>
+    <label for="">Company:</label>
+    <span>{{job.Company}}</span>
+  </div>
+  <div>
+    <label for="">Desc:</label>
+    <span>{{job.Desc}}</span>
+  </div>
+  <div>
+    <label for="">Compensation:</label>
+    <span>{{job.Compensation}}</span>
+  </div>
+  <div>
+    <label for="">Hours:</label>
+    <span>{{job.Hours}}</span>
+  </div>
+  <div>
+    <label for="">DesiredPersonality:</label>
+    <span>{{job.DesiredPersonality}}</span>
+  </div>
+  <div>
+    <label for="">OwnerId:</label>
+    <span>{{job.OwnerId}}</span>
+  </div>
+
+</div>
+
+<button mat-button color="accent">Edit</button>
+<button mat-button color="primary" routerLink="/jobs">Back to List</button>

@@ -7,12 +7,17 @@
     text-align: center;
 }
 
-hr { 
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-  }
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(138, 59, 59, 0), rgba(200, 5, 5, 0.75), rgba(190, 49, 49, 0));
+}
+
+.nav-btn {
+    color: white;
+    background-color: black;
+}
+
+input {
+    color: rgb(200, 5, 5);
+}

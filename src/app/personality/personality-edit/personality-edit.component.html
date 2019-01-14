@@ -1,0 +1,21 @@
+<h1>Update Your Personality</h1>
+<hr>
+
+<div *ngIf="personality">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editPersonalityForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input MatInput placeholder="PersonalityId" formControlName="PersonalityId" type="PersonalityId" required [value]="personality.PersonalityId"/>
+        </mat-form-field>
+      </div>
+      
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="PersonalityType" formControlName="PersonalityType" type="PersonalityType" required [value]="personality.PersonalityType" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+  </form>
+</div>
