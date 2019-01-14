@@ -1,6 +1,6 @@
 .loginForm {
     text-align: center;
-    font-family: 'Bungee', cursive;
+    font-family: 'Bungee', 'cursive';
 }
 
 hr {
@@ -16,6 +16,7 @@ hr {
 }
 
 input {
-    color: rgb(200, 5, 5)
+    color: rgb(200, 5, 5);
+    font-family: 'Bungee', 'cursive';
 }
 
