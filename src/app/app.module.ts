@@ -39,6 +39,8 @@ import { PersonalityDeleteComponent } from './personality/personality-delete/per
 
 //Services
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guards';
+import { Observable } from 'rxjs';
 
 
 
@@ -52,7 +54,7 @@ const routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'contact', component: ContactComponent},
   {
-    path: 'personality', children: [
+    path: 'personality', canActivate: [AuthGuard] , children: [
       { path: '', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
       { path: 'detail/:id', component: PersonalityDetailComponent },
@@ -106,9 +108,11 @@ const routes = [
     RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
+    Observable
   ],
   providers: [
     AuthService,
+    AuthGuard,
     PersonalityService
   ],
 
