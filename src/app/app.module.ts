@@ -62,7 +62,7 @@ const routes = [
       { path: 'create', component: PersonalityCreateComponent },
       { path: 'detail/:id', component: PersonalityDetailComponent },
       { path: 'delete/:id', component: PersonalityDeleteComponent }
-    ]
+    ] 
   },
   {path: 'job',children: [
       {path: 'index', component: JobIndexComponent},
