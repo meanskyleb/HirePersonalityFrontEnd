@@ -12,7 +12,7 @@ export class JobService {
   constructor(private _http: HttpClient) { }
 
   getJobs() {
-    return this._http.get(`${ApiUrl}/job`, {headers: this.getHeaders() });
+    return this._http.get(`${ApiUrl}/job/display`, {headers: this.getHeaders() });
   }
 
   createJob(job: Job) {
@@ -33,5 +33,5 @@ export class JobService {
   updateJob(job: Job){
     return this._http.put(`${ApiUrl}/job`, job, { headers: this.getHeaders() });
   }
-  
+
 }

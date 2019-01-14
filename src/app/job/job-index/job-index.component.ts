@@ -13,12 +13,14 @@ export class JobIndexComponent implements OnInit {
 
   constructor(private _jobService: JobService) { }
   
-  coulumnNames = ['EntityId', 'Name','Company','Desc','Compensation', 'Hours', 'DesiredPersonality', 'OwnerId']
+  columnNames = ['JobEntityId', 'Name','Company','Desc','Compensation', 'Hours', 'DesiredPersonality', 'OwnerId', 'buttons'];
 
   dataSource: MatTableDataSource<Job>
 
   ngOnInit() {
     this._jobService.getJobs().subscribe((jobs: Job[]) => {
-    this.dataSource = new MatTableDataSource<Job>(jobs) });
+      this.dataSource = new MatTableDataSource<Job>(jobs) 
+      console.log(this.dataSource)
+  });
   }
 }
