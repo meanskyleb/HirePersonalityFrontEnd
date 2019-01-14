@@ -1,17 +1,62 @@
 <h1>Personality</h1>
 <hr>
 ​
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="noteForm">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="personalityForm">
   <div>
     <div>
-      <mat-form-field>
-        <input matInput placeholder="Title" formControlName="Title" type="Title" required/>
-      </mat-form-field>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I enjoy design.
+      </mat-slider>
     </div>
     <div>
-      <mat-form-field>
-        <input matInput placeholder="Content" formControlName="Content" type="Content" required/>
-      </mat-form-field>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I like Solving Problems.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I See the big picture.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I don't miss the little things.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I enjoy being the leader.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I like working in a team.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I enjoy conversation.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I am technically minded.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I relate to others.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I can work independently.
+      </mat-slider>
+    </div>
+    <div>
+      <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1">
+        I learn quickly.
+      </mat-slider>
     </div>
   </div>
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Personality</button>

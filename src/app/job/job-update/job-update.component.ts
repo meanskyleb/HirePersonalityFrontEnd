@@ -32,7 +32,7 @@ export class JobUpdateComponent implements OnInit {
 
   createForm() {
     this.editJobForm = this._form.group({
-      EntityId: new FormControl(this.job.EntityId),
+      EntityId: new FormControl(this.job.JobEntityId),
       Name: new FormControl(this.job.Name),
       Company: new FormControl(this.job.Company),
       Desc: new FormControl(this.job.Desc),
@@ -44,7 +44,7 @@ export class JobUpdateComponent implements OnInit {
 
   onSubmit(form) {
     const updateJob: Job = {
-      EntityId: form.value.EntityId,
+      JobEntityId: form.value.JobEntityId,
       Name: form.value.Name,
       Company: form.value.Company,
       Desc: form.value.Desc,
