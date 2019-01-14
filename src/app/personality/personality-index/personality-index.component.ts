@@ -16,4 +16,3 @@ export class PersonalityIndexComponent implements OnInit {
 
 }
 
-

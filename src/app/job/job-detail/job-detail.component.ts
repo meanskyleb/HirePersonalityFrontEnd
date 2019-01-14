@@ -9,7 +9,6 @@ import { Job } from 'src/app/Models/job';
   styleUrls: ['./job-detail.component.css']
 })
 export class JobDetailComponent implements OnInit {
- 
   job: Job;
 
   constructor(private _activatedRoute: ActivatedRoute, private _jobService: JobService) { }
