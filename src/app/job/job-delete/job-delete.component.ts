@@ -24,7 +24,7 @@ job: Job;
   }
 
   onDelete() {
-    this._jobService.deleteJob(this.job.JobEntityId).subscribe(() => {
+    this._jobService.deleteJob(this.job.JobJobEntityId).subscribe(() => {
       this._router.navigate(['/job']);
     });
   }

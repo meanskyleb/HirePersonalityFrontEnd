@@ -21,26 +21,25 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { JobComponent } from './job/job.component';
-import { PersonalityComponent } from './personality/personality.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { JobIndexComponent } from './job/job-index/job-index.component';
-import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
-import { PersonalityService } from './services/personalityservice/personality.service';
+import { PersonalityComponent } from './personality/personality.component';
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
-import { JobCreateComponent } from './job/job-create/job-create.component';
+import { PersonalityCreateComponent } from './personality/personality-create/personality-create.component';
 import { PersonalityDetailComponent } from './personality/personality-detail/personality-detail.component';
 import { PersonalityEditComponent } from './personality/personality-edit/personality-edit.component';
+import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
+import { JobComponent } from './job/job.component';
+import { JobIndexComponent } from './job/job-index/job-index.component';
+import { JobCreateComponent } from './job/job-create/job-create.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
-import { JobDeleteComponent } from './job/job-delete/job-delete.component';
-import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
-import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
-import { JobDeleteComponent } from './job/job-delete/job-delete.component';
 import { JobUpdateComponent } from './job/job-update/job-update.component';
+import { JobDeleteComponent } from './job/job-delete/job-delete.component';
 
 //Services
 import { AuthService } from './services/auth.service';
+import { PersonalityService } from './services/personalityservice/personality.service';
+import { JobService } from './services/job.service';
 
 
 
@@ -80,22 +79,20 @@ const routes = [
     ProfileComponent,
     ContactComponent,
     AboutComponent,
-    JobComponent,
-    PersonalityComponent,
     HeaderComponent,
     FooterComponent,
-    JobIndexComponent,
-    PersonalityCreateComponent,
+    PersonalityComponent,
     PersonalityIndexComponent,
+    PersonalityCreateComponent,
     PersonalityDetailComponent,
     PersonalityEditComponent,
+    PersonalityDeleteComponent,
+    JobComponent,
+    JobIndexComponent,
     JobCreateComponent,
     JobDetailComponent,
-    PersonalityDetailComponent,
-    PersonalityIndexComponent,
-    PersonalityDeleteComponent,
-    JobDeleteComponent,
-    JobUpdateComponent
+    JobUpdateComponent,
+    JobDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -112,7 +109,8 @@ const routes = [
   ],
   providers: [
     AuthService,
-    PersonalityService
+    PersonalityService,
+    JobService
   ],
 
   bootstrap: [AppComponent]
