@@ -17,6 +17,10 @@ body {
     background-size: cover;
 }
 
+.home {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Antu_hp_logo.svg/2000px-Antu_hp_logo.svg.png);
+}
+
 ul{
     color: White;
     text-align: left;

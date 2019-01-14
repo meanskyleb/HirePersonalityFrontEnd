@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
+import { Observable } from 'rxjs';
+
 //Components
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -39,8 +41,10 @@ import { JobDeleteComponent } from './job/job-delete/job-delete.component';
 
 //Services
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guards';
 import { PersonalityService } from './services/personalityservice/personality.service';
 import { JobService } from './services/job.service';
+
 
 
 
@@ -54,6 +58,7 @@ const routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'contact', component: ContactComponent},
   {
+
     path: 'personality', children: [
       { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
@@ -108,9 +113,11 @@ const routes = [
     RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
+    Observable
   ],
   providers: [
     AuthService,
+    AuthGuard,
     PersonalityService,
     JobService
   ],
