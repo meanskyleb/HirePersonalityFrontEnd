@@ -22,11 +22,8 @@ export class AuthService {
   constructor(private _http: HttpClient, private _router:Router ) { }
 
     register(regUserData: RegisterUser) {
-      return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData).subscribe( (token: any) => {
-        localStorage.setITem('token', token.token);
-        this._router.navigate(['/']);
-      })
-      
+      return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData);
+    
     }
     
     login(loginInfo) {
