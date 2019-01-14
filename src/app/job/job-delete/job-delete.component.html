@@ -1,0 +1,25 @@
+<h1>Delete Job</h1>
+<h4>Are you sure about this?</h4>
+
+<hr>
+<div *ngIf="job">
+  <div>
+    <label for="">Job Id</label>
+    <span>{{job.JobEntityId}}</span>
+  </div>
+  <div>
+    <label for="">Job Title</label>
+    <span>{{job.Name}}</span>
+  </div>
+  <div>
+    <label for="">Description</label>
+    <span>{{job.Desc}}</span>
+  </div>
+  <div>
+    <label for="">Compensation</label>
+    <span>{{job.Compensation}}</span>
+  </div>
+</div>
+
+<button mat-button color="warn" routerLinks="/job" (click)="onDelete()">Delete</button>
+<button mat-button color="primary" routerLinks="/job">Back to Job List</button>

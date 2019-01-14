@@ -35,4 +35,10 @@ getPersonalitybyId(id: string) {
 updatePersonality(personality: Personality) {
   return this._http.put(`${ApiUrl}/personality`, personality, { headers: this.getHeaders() });
 }
+  
+deletePersonality(id: number) {
+  return this._http.delete(`${ApiUrl}/Personality${id}`, {headers: this.getHeaders()});
+}
+
+}
 }
