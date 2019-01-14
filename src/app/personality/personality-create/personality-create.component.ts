@@ -24,8 +24,8 @@ export class PersonalityCreateComponent implements OnInit {
 
 createForm() {
   this.personalityForm = this._form.group({
-    Title: new FormControl,
-    Content: new FormControl
+    PersonalityId: new FormControl,
+    PersonalityType: new FormControl
   });
 }
 

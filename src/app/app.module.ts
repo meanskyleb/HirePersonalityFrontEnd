@@ -31,12 +31,17 @@ import { PersonalityService } from './services/personalityservice/personality.se
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
 import { JobCreateComponent } from './job/job-create/job-create.component';
 import { PersonalityDetailComponent } from './personality/personality-detail/personality-detail.component';
+import { PersonalityEditComponent } from './personality/personality-edit/personality-edit.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
+import { JobDeleteComponent } from './job/job-delete/job-delete.component';
+import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
+
 
 //Services
 import { AuthService } from './services/auth.service';
-import { PersonalityDeleteComponent } from './personality/personality-delete/personality-delete.component';
-import { JobDeleteComponent } from './job/job-delete/job-delete.component';
+
+
+
 
 
 const routes = [
@@ -80,6 +85,8 @@ const routes = [
     JobIndexComponent,
     PersonalityCreateComponent,
     PersonalityIndexComponent,
+    PersonalityDetailComponent,
+    PersonalityEditComponent
     JobDetailComponent,
     JobCreateComponent,
     JobDetailComponent,
