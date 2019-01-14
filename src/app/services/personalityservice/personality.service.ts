@@ -30,4 +30,9 @@ createPersonality(personality: Personality) {
 getPersonalitybyId(id: string) {
   return this._http.get(`${ApiUrl}/personality/${id}`, { headers: this.getHeaders() });
 }
+
+
+updatePersonality(personality: Personality) {
+  return this._http.put(`${ApiUrl}/personality`, personality, { headers: this.getHeaders() });
+}
 }

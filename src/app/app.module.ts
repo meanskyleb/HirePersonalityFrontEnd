@@ -36,6 +36,7 @@ import { PersonalityCreateComponent } from './personality/personality-create/per
 import { PersonalityService } from './services/personalityservice/personality.service';
 import { PersonalityIndexComponent } from './personality/personality-index/personality-index.component';
 import { PersonalityDetailComponent } from './personality/personality-detail/personality-detail.component';
+import { PersonalityEditComponent } from './personality/personality-edit/personality-edit.component';
 
 const routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -72,7 +73,8 @@ const routes = [
     FooterComponent,
     PersonalityCreateComponent,
     PersonalityIndexComponent,
-    PersonalityDetailComponent
+    PersonalityDetailComponent,
+    PersonalityEditComponent
   ],
   imports: [
     BrowserModule,
