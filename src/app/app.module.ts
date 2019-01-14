@@ -8,6 +8,7 @@ import {
   MatToolbarModule,
   MatFormFieldModule,
   MatInputModule,
+  MatTableModule
  } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -103,6 +104,7 @@ const routes = [
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
