@@ -4,52 +4,55 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="personalityForm">
   <div>
     <div>
-        I enjoy design.
+        I enjoy design
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_1">
     </div>
     <div>
-        I like solving problems.
+        I like solving problems
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_2">
     </div>
     <div>
-        I see the big picture.
+        I see the big picture
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_3">
     </div>
     <div>
-        I don't miss the little things.
+        I don't miss the little things
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_4">
     </div>
     <div>
-        I like working on a team.
+        I like working on a team
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_5">
     </div>
     <div>
-        I enjoy conversation.
+        I enjoy conversation
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_6">
     </div>
     <div>
-        I am technically minded.
+        I am technically minded
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_7">
     </div>
     <div>
-        I realate to others.
+        I realate to others
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_8">
     </div>
     <div>
-        I can work independently.
+        I can work independently
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_9">
     </div>
     <div>
-        I enjoy large group events.
+        I enjoy large group events
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_10">
     </div>
     <div>
-        I learn quickly.
+        I learn quickly
         <input type="range" min="1" max="5" value="2" class="slider" id="Question_11">
     </div>
   </div>
-  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Personality</button>
+
+  <br>
+  <a mat-button routerLink="/personality/detail">Create Personality</a>
 </form>
+<br>
+<a mat-button routerLink="/personality/index">Back </a>
+<hr>
 ​
-<a mat-button routerLink="/personality/index"> Back </a>
-<a mat-button type="submit"> Submit </a>

@@ -1,5 +1,6 @@
 .loginForm {
     text-align: center;
+    font-family: 'Bungee', 'cursive';
 }
 
 hr {
@@ -9,11 +10,13 @@ hr {
 }
 
 .nav-btn {
-    color:white;
+    color:rgb(200, 5, 5);
     background-color: black;
+    font-family: 'Bungee', cursive;
 }
 
 input {
-    color: rgb(200, 5, 5)
+    color: rgb(200, 5, 5);
+    font-family: 'Bungee', 'cursive';
 }
 
