@@ -14,7 +14,7 @@ export class JobCreateComponent implements OnInit {
 
   jobForm: FormGroup;
 
-  constructor(private _jobService: JobService, private _form: FormBuilder) {
+  constructor(private _jobService: JobService, private _form: FormBuilder, private _router: Router) {
     
    }
 
@@ -34,6 +34,9 @@ export class JobCreateComponent implements OnInit {
   }
 
   onSubmit() {
-    this._jobService.createJob(this.jobForm.value);
+    console.log(this.jobForm.value)
+    this._jobService.createJob(this.jobForm.value).subscribe(data => {
+      this._router.navigate(['job/index']);
+    });
   }
 }

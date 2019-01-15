@@ -3,6 +3,7 @@ import { PersonalityService } from 'src/app/services/personalityservice/personal
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-personality-create',
   templateUrl: './personality-create.component.html',
@@ -12,11 +13,13 @@ export class PersonalityCreateComponent implements OnInit {
 
   personalityForm: FormGroup;
 
-  constructor(private _personalityservice: PersonalityService, private _form: FormBuilder, private _router: Router) {}
+  constructor(private _personalityservice: PersonalityService, private _form: FormBuilder, private _router: Router) {
+       this.createForm();
+  }
    
 
   ngOnInit() {
-    this.createForm();
+ 
   }
 
 
@@ -40,6 +43,9 @@ createForm() {
 }
 
 onSubmit() {
-  this._personalityservice.createPersonality(this.personalityForm.value);
+  console.log(this.personalityForm.value)
+  this._personalityservice.createPersonality(this.personalityForm.value).subscribe(data => {
+    this._router.navigate(['/home']);
+  });
 }
 }
