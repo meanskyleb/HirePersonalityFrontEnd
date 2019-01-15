@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatGridTileHeaderCssMatStyler } from '@angular/material';
 import { Personality} from 'src/app/Models/personality';
 
-const ApiUrl = 'https://localhost:44311/api/values';
+const ApiUrl = 'https://localhost:44311/api/';
 
 @Injectable({
   providedIn: 'root'

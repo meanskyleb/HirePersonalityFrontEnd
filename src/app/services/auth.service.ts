@@ -30,8 +30,8 @@ export class AuthService {
       return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
         localStorage.setItem('token', token.token);
         this.isLoggedIn.next(true);
-        this._router.navigate(['/home'])
-      })
+        this._router.navigate(['/home']);
+      });
     }
 
     currentUser() :boolean {
