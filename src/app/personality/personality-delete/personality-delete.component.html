@@ -1,5 +1,4 @@
-<h1>Delete</h1>
-<h4>Are you sure you want to delete your test?</h4>
+<h1>Are you sure you want to delete your test?</h1>
 
 <hr>
 
@@ -14,5 +13,5 @@
   </div>
 </div>
 
-<button mat-button color="warn" (click)="onDelete()">Delete</button>
-<button mat-button color="primary" routerLink="/home">Back</button>
+<a mat-raised-button class="back" routerLink="/personality/detail">Back</a>
+<a mat-raised-button class="nav-btn" routerLink="/home" (click)="onDelete()">Delete</a>
