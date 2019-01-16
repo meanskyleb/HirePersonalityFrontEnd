@@ -12,3 +12,14 @@ h3 {
 .formSpreeEmail{
     text-align: Center;
 }
+
+p {
+    font-family: 'Bungee', 'cursive';
+    text-align: center;
+    color: rgb(200, 5, 5);
+}
+
+[type="submit"] {
+    font-family: 'Bungee', 'cursive';
+    color: rgb(200, 5, 5);
+}
