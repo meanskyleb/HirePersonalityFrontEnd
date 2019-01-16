@@ -13,7 +13,6 @@ import {
  } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 
 //Components
 import { AppComponent } from './app.component';
@@ -65,10 +64,11 @@ const routes = [
       { path: 'delete', component: PersonalityDeleteComponent }
     ] 
   },
-  {path: 'job',children: [
+  {path: 'job', children: [
       {path: 'index', component: JobIndexComponent},
       {path: 'create', component: JobCreateComponent},
       {path: 'details/:id', component: JobDetailComponent},
+      {path: 'update/:id', component: JobUpdateComponent},
       {path: 'delete/:id', component: JobDeleteComponent}
 
   ]},
@@ -111,7 +111,6 @@ const routes = [
     MatTableModule,
     MatSliderModule,
     RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'}),
-    AppRoutingModule,
     BrowserAnimationsModule
   ],
   providers: [
