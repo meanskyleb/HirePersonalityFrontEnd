@@ -61,8 +61,8 @@ const routes = [
     path: 'personality', children: [
       { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
-      { path: 'detail/:id', component: PersonalityDetailComponent },
-      { path: 'delete/:id', component: PersonalityDeleteComponent }
+      { path: 'detail', component: PersonalityDetailComponent },
+      { path: 'delete', component: PersonalityDeleteComponent }
     ] 
   },
   {path: 'job',children: [
