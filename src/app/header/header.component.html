@@ -11,7 +11,6 @@
           <li><a routerLink = "/registration" routerLinkActive = "active">Register</a></li>   
         </div>
         <div *ngIf="isLoggedIn" class="logout-btn">
-          <li><a routerLink = "/profile" routerLinkActive = "active">Profile</a></li>
           <li><a id="logout" mat-stroked-button (click)="onLogout()">Logout</a></li>
         </div>
       </div>
