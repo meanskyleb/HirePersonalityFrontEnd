@@ -58,20 +58,21 @@ const routes = [
   {path: 'contact', component: ContactComponent},
   {
 
-    path: 'personality', children: [
+    path: 'personality', canActivate: [AuthGuard] , children: [
       { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
       { path: 'detail', component: PersonalityDetailComponent },
       { path: 'delete', component: PersonalityDeleteComponent }
     ] 
   },
-  {path: 'job',children: [
+  {path: 'job', canActivate: [AuthGuard] , children: [
       {path: 'index', component: JobIndexComponent},
       {path: 'create', component: JobCreateComponent},
-      {path: 'details/:id', component: JobDetailComponent},
-      {path: 'delete/:id', component: JobDeleteComponent}
-
-  ]},
+      {path: 'details', component: JobDetailComponent},
+      {path: 'delete', component: JobDeleteComponent}
+  ]
+  },
+{ path : '**', component: RegistrationComponent }
 ];
 
 

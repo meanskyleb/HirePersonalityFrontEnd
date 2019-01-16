@@ -1,4 +1,4 @@
-<h1>Personality</h1>
+<h1>Personality Test</h1>
 <hr>
 ​
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="personalityForm">
@@ -55,8 +55,9 @@
 
   <br>
   <a mat-raised-button class="nav-btn" routerLink="/personality/detail" type="submit">Create Personality</a>
+  <br>
+  <a mat-button class="back" routerLink="/personality/index">Back </a>
 </form>
-<br>
-<a mat-button routerLink="/personality/index">Back </a>
+
 <hr>
 ​
