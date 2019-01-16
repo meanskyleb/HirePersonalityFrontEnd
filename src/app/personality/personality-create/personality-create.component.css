@@ -7,6 +7,7 @@ hr {
 [type="submit"] {
     font-family: 'Bungee', cursive;
     background-color: black;
+    color: rgb(200, 5, 5);
 }
 
 form {
@@ -20,4 +21,8 @@ form {
 
 .back:hover {
     color: black;
+}
+
+[type="submit"]:hover {
+    color: white;
 }
