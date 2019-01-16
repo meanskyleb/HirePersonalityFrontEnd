@@ -110,7 +110,7 @@ const routes = [
     MatInputModule,
     MatTableModule,
     MatSliderModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'}),
     AppRoutingModule,
     BrowserAnimationsModule
   ],
