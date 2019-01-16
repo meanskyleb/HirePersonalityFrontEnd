@@ -32,15 +32,37 @@ personality: Personality;
 
   createForm() {
     this.editPersonalityForm = this._form.group({
-      PersonalityId: new FormControl(this.personality.PersonalityId),
-      PersonalityType: new FormControl(this.personality.PersonalityType)
+      Design: new FormControl,
+      Problem: new FormControl,
+      Picture: new FormControl,
+      Minutiae: new FormControl,
+      Leadership: new FormControl,
+      Teamwork: new FormControl,
+      Conversation: new FormControl,
+      Technical: new FormControl,
+      Relationship: new FormControl,
+      Independent: new FormControl,
+      PublicSpeaking: new FormControl,
+      Quick: new FormControl
     });
   }
 
   onSubmit(form) {
     const updatePersonality: Personality = {
-      PersonalityId: form.value.PersonalityId,
-      PersonalityType: form.value.PersonalityType
+      PersonalityEntityId: this.personality.PersonalityEntityId,
+      PersonalityType: this.personality.PersonalityType,
+      Design: form.value.Design,
+      Problem: form.value.Problem,
+      Picture: form.value.Picture,
+      Minutiae: form.value.Minutiae,
+      Leadership: form.value.Leadership,
+      Teamwork: form.value.Teamwork,
+      Conversation: form.value.Conversation,
+      Technical: form.value.Technical,
+      Relationship: form.value.Relationship,
+      Independent: form.value.Independent,
+      PublicSpeaking: form.value.PublicSpeaking,
+      Quick: form.value.Quick
     };
     this._personalityService.updatePersonality(updatePersonality).subscribe(d => {
       this._router.navigate(['/personality']);
