@@ -60,8 +60,9 @@ const routes = [
     path: 'personality', canActivate: [AuthGuard] , children: [
       { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
-      { path: 'detail', component: PersonalityDetailComponent },
-      { path: 'delete', component: PersonalityDeleteComponent }
+      { path: 'details/:id', component: PersonalityDetailComponent },
+      { path: 'update/:id', component: PersonalityEditComponent},
+      { path: 'delete/:id', component: PersonalityDeleteComponent }
     ] 
   },
   {path: 'job', children: [
