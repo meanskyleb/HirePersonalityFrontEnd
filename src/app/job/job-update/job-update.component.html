@@ -1,12 +1,12 @@
 <h1>Edit a Job.</h1>
 <hr>
 
-<div *ngIf="Job">
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editJobForm">
+<div *ngIf="job">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="updateJobForm">
     <div>
       <div hidden>
         <mat-form-field>
-          <input matInput placeholder="EntityId" formControlName="EntityId" type="EntityId" required [value]="job.EntityId" />
+          <input matInput placeholder="EntityId" formControlName="EntityId" type="EntityId" required [value]="job.JobEntityId" />
         </mat-form-field>
       </div>
       <div>

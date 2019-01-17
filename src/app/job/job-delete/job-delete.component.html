@@ -5,21 +5,21 @@
 <div *ngIf="job">
   <div>
     <label for="">Job Id</label>
-    <span>{{job.JobEntityId}}</span>
+    <span>{{job.jobEntityId}}</span>
   </div>
   <div>
     <label for="">Job Title</label>
-    <span>{{job.Name}}</span>
+    <span>{{job.name}}</span>
   </div>
   <div>
     <label for="">Description</label>
-    <span>{{job.Desc}}</span>
+    <span>{{job.desc}}</span>
   </div>
   <div>
     <label for="">Compensation</label>
-    <span>{{job.Compensation}}</span>
+    <span>{{job.compensation}}</span>
   </div>
+  <button mat-button color="warn"  (click)="onDelete(job.jobEntityId)" value="{{job.jobEntityId}}">Delete</button>
+<button mat-button color="primary" routerLink="/job/index">Back to Job List</button>
 </div>
 
-<button mat-button color="warn" routerLink="/home" (click)="onDelete()">Delete</button>
-<button mat-button color="primary" routerLink="/job/index">Back to Job List</button>
