@@ -17,6 +17,7 @@ export class PersonalityDeleteComponent implements OnInit {
     this._ar.paramMap.subscribe(p => {
       this._personalityService.getPersonalitybyId(p.get('id')).subscribe((singlePersonality: Personality) => {
         this.personality = singlePersonality;
+        console.log(this.personality)
     });
   });
 }
@@ -24,9 +25,9 @@ export class PersonalityDeleteComponent implements OnInit {
   ngOnInit() {
   }
 
-  onDelete() {
-    this._personalityService.deletePersonality(this.personality.PersonalityEntityId).subscribe(() => {
-      this._router.navigate(['/home']);
+  onDelete(id) {
+    this._personalityService.deletePersonality(id).subscribe(() => {
+      this._router.navigate(['/personality/index']);
     });
   }
 
