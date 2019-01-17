@@ -6,3 +6,8 @@
     color:rgb(200, 5, 5);
 }
 
+.logo {
+    max-height: 1em;
+    max-width: 1em;
+}
+
