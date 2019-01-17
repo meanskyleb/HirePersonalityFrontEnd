@@ -15,12 +15,11 @@ export class PersonalityCreateComponent implements OnInit {
   personalityType;
 
   constructor(private _personalityservice: PersonalityService, private _form: FormBuilder, private _router: Router) {
-       this.createForm();
   }
    
 
   ngOnInit() {
- 
+    this.createForm();
   }
 
 
@@ -44,7 +43,6 @@ createForm() {
 }
 
 onSubmit() {
-  console.log(this.personalityForm.value)
   this._personalityservice.createPersonality(this.personalityForm.value).subscribe(data => {
     this._personalityservice.getPersonalityType()
    this._personalityservice.getPersonalityType().subscribe(p => {

@@ -65,7 +65,7 @@ const routes = [
       { path: 'delete/:id', component: PersonalityDeleteComponent }
     ] 
   },
-  {path: 'job', children: [
+  {path: 'job', canActivate: [AuthGuard] , children: [
       {path: 'index', component: JobIndexComponent},
       {path: 'create', component: JobCreateComponent},
       {path: 'details/:id', component: JobDetailComponent},

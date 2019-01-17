@@ -26,7 +26,7 @@ job: Job;
 
   onDelete(id) {
     this._jobService.deleteJob(id).subscribe(() => {
-      this._router.navigate(['/job']);
+      this._router.navigate(['/job/index']);
     });
   }
 }

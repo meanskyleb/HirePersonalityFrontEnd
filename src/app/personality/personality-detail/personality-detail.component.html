@@ -1,17 +1,21 @@
-<h1>Your Test</h1>
+<h1>Your Test Results</h1>
 
 <hr>
 <div *ngIf="personality">
   <div> 
-    <label for="">PersonalityId:</label>
+    <label for="">Personality Id</label>
     <span>{{personality.PersonalityEntityId}}</span>
   </div>
   <div>
-    <label for="">PersonalityType</label>
+    <label for="">Personality Number</label>
+    <span>{{personality.PersonalityNumber}}</span>
+  </div>
+  <div>
+    <label for="">Personality Type</label>
     <span>{{personality.PersonalityType}}</span>
   </div>
 </div>
 
-<button mat-button color="accent">Edit</button>
-<button mat-button color="primary" routerLink="/jobs">Back to List</button>
+<button mat-raised-button class="edit" routerLink="/personality/create">Edit</button>
+<button mat-raised-button class="delete" routerLink="/personality/delete/id">Delete</button>
 
