@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class JobDetailComponent implements OnInit {
   job: Job;
-
+  personalityType: number;
   constructor(private _activatedRoute: ActivatedRoute, private _jobService: JobService) { }
   
   ngOnInit() {
@@ -21,5 +21,5 @@ export class JobDetailComponent implements OnInit {
       });
     });
   }
-  
 }
+

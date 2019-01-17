@@ -1,9 +1,19 @@
-<h1>Your Test</h1>
+<h1>Your Test Results</h1>
 
 <hr>
-<div *ngIf= "EntryLevel()">
-    <h2>Entry Level</h2>
-    <p>You prefer bannanas over oranges, you are an all around cool dude, keep up the skate boarding by the barbie m8ty!</p>
+<div *ngIf="personality">
+  <div> 
+    <label for="">Personality Id</label>
+    <span>{{personality.PersonalityEntityId}}</span>
+  </div>
+  <div>
+    <label for="">Personality Number</label>
+    <span>{{personality.PersonalityNumber}}</span>
+  </div>
+  <div>
+    <label for="">Personality Type</label>
+    <span>{{personality.PersonalityType}}</span>
+  </div>
 </div>
 <div *ngIf= "SecondLevel()">
   <h2>Skilled Level</h2>
@@ -19,6 +29,11 @@
 </div>
 
 
+<<<<<<< HEAD
 <button mat-button color="accent" routerLink="/personality/edit">Edit</button>
 <button mat-button color="primary" routerLink="/jobs/index">Back to List</button>
+=======
+<button mat-raised-button class="edit" routerLink="/personality/create">Edit</button>
+<button mat-raised-button class="delete" routerLink="/personality/delete/id">Delete</button>
+>>>>>>> c90df0d6c232472d92f43b6c498ac1b9ddbf5827
 

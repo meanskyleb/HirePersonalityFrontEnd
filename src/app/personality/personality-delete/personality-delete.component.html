@@ -4,20 +4,20 @@
 
 <div *ngIf="personality">
   <div>
-    <label for="">PersonalityEntityId</label>
+    <label for="">Personality Id</label>
     <span>{{personality.PersonalityEntityId}}</span>
   </div>
   <div>
-    <label for="">PersonalityId</label>
+    <label for="">Personality Number</label>
     <span>{{personality.PersonalityNumber}}</span>
   </div>
   <div>
-    <label for="">PersonalityType</label>
+    <label for="">Personality Type</label>
     <span>{{personality.PersonalityType}}</span>
   </div>
 </div>
 
-<a mat-raised-button class="back" routerLink="/personality/detail">Back</a>
-<a mat-raised-button class="nav-btn" routerLink="/home" (click)="onDelete()">Delete</a>
+<button mat-raised-button class="back" routerLink="/personality/details/id">Back To Details</button>
+<button mat-raised-button class="nav-btn" (click)="onDelete(personality.personalityEntityId)" value="{{personality.personalityEntityId">Delete</button>
 
 <hr>

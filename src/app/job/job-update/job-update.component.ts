@@ -28,7 +28,6 @@ export class JobUpdateComponent implements OnInit {
 
               
   ngOnInit() {
-    this.updateJobForm;
   }
 
   createForm() {
@@ -45,14 +44,14 @@ export class JobUpdateComponent implements OnInit {
 
   onSubmit(form) {
     const updateJob: Job = {
-      JobEntityId: form.value.JobEntityId,
+      JobEntityId: this.job.JobEntityId,
       Name: form.value.Name,
       Company: form.value.Company,
       Desc: form.value.Desc,
       Compensation: form.value.Compensation,
       Hours: form.value.Hours,
       DesiredPersonality: form.value.DesiredPersonality,
-      OwnerId: form.value.OwnerId
+      OwnerId: this.job.OwnerId
     };
     console.log(updateJob);
     this._jobservice.updateJob(updateJob).subscribe(d => {

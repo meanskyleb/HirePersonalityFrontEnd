@@ -5,9 +5,13 @@ hr {
 }
 
 .nav-btn {
-    background-color: black;
+    background-color: white;
 }
 
 .back:hover {
     color: black; 
+}
+
+back {
+    background-color: white;
 }

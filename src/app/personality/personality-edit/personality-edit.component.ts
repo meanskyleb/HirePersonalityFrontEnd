@@ -65,11 +65,8 @@ personality: Personality;
       Quick: form.value.Quick
     };
     this._personalityService.updatePersonality(updatePersonality).subscribe(d => {
-      this._router.navigate(['/personality']);
+      this._router.navigate(['/personality/create']);
     });
   }
-
-
-
 }
 
