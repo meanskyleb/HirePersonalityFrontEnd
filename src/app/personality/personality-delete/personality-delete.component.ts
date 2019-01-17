@@ -26,7 +26,7 @@ export class PersonalityDeleteComponent implements OnInit {
 
   onDelete() {
     this._personalityService.deletePersonality(this.personality.PersonalityEntityId).subscribe(() => {
-      this._router.navigate(['/Personality']);
+      this._router.navigate(['/home']);
     });
   }
 
