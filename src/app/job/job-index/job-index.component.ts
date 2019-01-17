@@ -20,6 +20,7 @@ export class JobIndexComponent implements OnInit {
   ngOnInit() {
     this._jobService.getJobs().subscribe((jobs: Job[]) => {
       this.dataSource = new MatTableDataSource<Job>(jobs) 
+      console.log(this.dataSource)
   });
   }
 }

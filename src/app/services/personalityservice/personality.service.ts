@@ -33,6 +33,7 @@ getPersonalitybyId(id: string) {
 
 
 updatePersonality(personality: Personality) {
+
   return this._http.put(`${ApiUrl}/Personality`, personality, {headers: this.getHeaders() });
 }
   
