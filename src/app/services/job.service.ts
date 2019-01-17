@@ -12,7 +12,7 @@ export class JobService {
   constructor(private _http: HttpClient) { }
 
   getJobs() {
-    return this._http.get(`${ApiUrl}/job/display`, {headers: this.getHeaders() });
+    return this._http.get(`${ApiUrl}/job/display`, {headers: this.getHeaders()});
   }
 
   createJob(job: Job) {
