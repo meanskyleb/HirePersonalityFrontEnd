@@ -1,23 +1,4 @@
 
-<h1>Index</h1>
-<a routerLink="/job/create" mat-raised-button color="primary">Create New</a>
-<hr>
-
-<div class="deck" *ngFor = "let individualJobs of Jobs" [formGroup]= "individualJobs">
-    <div class="card" >
-        <div class="cardContainer">
-            <div class="job">
-                    <h1><i>{{ job.name}}</i></h1>
-                    <h3>{{ job.company }}</h3>
-                    <p>{{ job.desc }}</p>
-                    <p>{{ job.compensation }}</p>
-                    <p>{{ job.hours }}</p>
-                    <p>{{ job.desiredPersonality }}<p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <h1>Jobs</h1>
 <a routerLink="/job/create"mat-raised-button class="nav-btn">Create New</a>
 <hr>

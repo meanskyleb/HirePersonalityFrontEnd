@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobComponent implements OnInit {
 
-  constructor() { }
+  // onFindJobs() : void {
+//       this._jobService.getJobs().subscribe(Job => {
+//         this.jobs=Job;
+//         this.jobs.reverse();
+//     })
+//   }    
+// @Input() 
+//     get jobs(): any {
+//       return this.jobs
+//     }
+//     set jobs(job: any) {
+//       this.jobs = (job)
+//     }  
 
-  ngOnInit() {
-  }
+ ngOnInit(){}
+//       this.onFindJobs();
+//     }
 
 }

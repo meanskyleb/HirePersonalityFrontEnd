@@ -70,8 +70,8 @@ const routes = [
       {path: 'details/:id', component: JobDetailComponent},
       {path: 'update/:id', component: JobUpdateComponent},
       {path: 'delete/:id', component: JobDeleteComponent}
-];
-
+]}
+]
 
 @NgModule({
   declarations: [
