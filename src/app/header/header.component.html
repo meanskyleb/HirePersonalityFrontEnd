@@ -1,6 +1,9 @@
 <div class="navbar">
     <ul>
-      <li><a routerLink = "/home" routerLinkActive = "active">Home</a></li>
+      <li>
+        <span>
+        <img src="../assets/img/hplogo.png" id="logo"
+      routerLink = "/home"></span></li>
       <li><a routerLink = "/job/index" routerLinkActive = "active">Jobs</a></li>
       <li><a routerLink = "/personality/index" routerLinkActive = "active">Personality Test</a></li>
       <li><a routerLink = "/about" routerLinkActive = "active">About</a></li>
@@ -11,7 +14,6 @@
           <li><a routerLink = "/registration" routerLinkActive = "active">Register</a></li>   
         </div>
         <div *ngIf="isLoggedIn" class="logout-btn">
-          <li><a routerLink = "/profile" routerLinkActive = "active">Profile</a></li>
           <li><a id="logout" mat-stroked-button (click)="onLogout()">Logout</a></li>
         </div>
       </div>

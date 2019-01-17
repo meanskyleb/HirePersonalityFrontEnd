@@ -1,62 +1,63 @@
-<h1>Personality</h1>
+<h1>Personality Test</h1>
 <hr>
 ​
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="personalityForm">
   <div>
     <div>
         I enjoy design
-        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_1" formControlName="Design"></mat-slider>
+        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Design" id="Question_1" formControlName="Design"></mat-slider>
     </div>
     <div>
         I like solving problems
-        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_2" formControlName="Problem"></mat-slider>
+        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Problem" id="Question_2" formControlName="Problem"></mat-slider>
     </div>
     <div>
         I see the big picture
-        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_3" formControlName="Picture"></mat-slider>
+        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Picture" id="Question_3" formControlName="Picture"></mat-slider>
     </div>
     <div>
         I don't miss the little things
-        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_4" formControlName="Minutiae"></mat-slider>
+        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Minutiae" id="Question_4" formControlName="Minutiae"></mat-slider>
     </div>
     <div>
         I enjoy being the leader
-        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_4" formControlName="Leadership"></mat-slider>
+        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Leadership" id="Question_5" formControlName="Leadership"></mat-slider>
     </div>
     <div>
         I like working on a team
-        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_5" formControlName="Teamwork"></mat-slider>
+        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Teamwork" id="Question_6" formControlName="Teamwork"></mat-slider>
     </div>
     <div>
         I enjoy conversation
-        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_6" formControlName="Conversation"></mat-slider>
+        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Conversation" id="Question_7" formControlName="Conversation"></mat-slider>
     </div>
     <div>
         I am technically minded
-        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_7" formControlName="Technical"></mat-slider>
+        <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Technical" id="Question_8" formControlName="Technical"></mat-slider>
     </div>
     <div>
-        I realate to others
-        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_8" formControlName="Relationship"></mat-slider>
+        I relate to others
+        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Relationship" id="Question_9" formControlName="Relationship"></mat-slider>
     </div>
     <div>
         I can work independently
-        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_9" formControlName="Independent"></mat-slider>
+        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Independent" id="Question_10" formControlName="Independent"></mat-slider>
     </div>
     <div>
         I enjoy large group events
-        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_10" formControlName="PublicSpeaking"></mat-slider>
+        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="PublicSpeaking" id="Question_11" formControlName="PublicSpeaking"></mat-slider>
     </div>
     <div>
         I learn quickly
-        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" id="Question_11" formControlName="Quick"></mat-slider>
+        <mat-slider  thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="9" type="Quick" id="Question_12" formControlName="Quick"></mat-slider>
     </div>
   </div>
 
   <br>
-  <a mat-button routerLink="/personality/detail">Create Personality</a>
+  <button mat-raised-button class="nav-btn" type="submit">Create Personality</button>
+  <br>
+  <a mat-button class="back" routerLink="/personality/index">Back </a>
 </form>
-<br>
-<a mat-button routerLink="/personality/index">Back </a>
+
 <hr>
 ​

@@ -13,7 +13,6 @@ import {
  } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 
 //Components
 import { AppComponent } from './app.component';
@@ -58,20 +57,19 @@ const routes = [
   {path: 'contact', component: ContactComponent},
   {
 
-    path: 'personality', children: [
+    path: 'personality', canActivate: [AuthGuard] , children: [
       { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
-      { path: 'detail/:id', component: PersonalityDetailComponent },
-      { path: 'delete/:id', component: PersonalityDeleteComponent }
+      { path: 'detail', component: PersonalityDetailComponent },
+      { path: 'delete', component: PersonalityDeleteComponent }
     ] 
   },
-  {path: 'job',children: [
+  {path: 'job', children: [
       {path: 'index', component: JobIndexComponent},
       {path: 'create', component: JobCreateComponent},
       {path: 'details/:id', component: JobDetailComponent},
+      {path: 'update/:id', component: JobUpdateComponent},
       {path: 'delete/:id', component: JobDeleteComponent}
-
-  ]},
 ];
 
 
@@ -110,8 +108,7 @@ const routes = [
     MatInputModule,
     MatTableModule,
     MatSliderModule,
-    RouterModule.forRoot(routes),
-    AppRoutingModule,
+    RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'}),
     BrowserAnimationsModule
   ],
   providers: [

@@ -12,7 +12,7 @@ export class JobService {
   constructor(private _http: HttpClient) { }
 
   getJobs() {
-    return this._http.get(`${ApiUrl}/job/display`, {headers: this.getHeaders() });
+    return this._http.get(`${ApiUrl}/job/display`, {headers: this.getHeaders()});
   }
 
   createJob(job: Job) {
@@ -20,7 +20,7 @@ export class JobService {
    }
 
   private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer $(localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${(localStorage.getItem('token'))}`);
   }
   getJob(id: string) {
     return this._http.get(`${ApiUrl}/job/${id}`, { headers: this.getHeaders() });
