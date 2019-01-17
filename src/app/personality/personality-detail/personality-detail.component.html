@@ -1,19 +1,19 @@
 <h1>Your Test</h1>
 
 <hr>
-<div *ngIf="personality.personalityType == 1">
+<div *ngIf= "EntryLevel()">
     <h2>Entry Level</h2>
     <p>You prefer bannanas over oranges, you are an all around cool dude, keep up the skate boarding by the barbie m8ty!</p>
 </div>
-<div *ngIf="personality.personalityType == 2">
+<div *ngIf= "SecondLevel()">
   <h2>Skilled Level</h2>
   <p>You prefer chicken fingers over oranges, you are an all around awesome dude, keep up the amateur writing in the coffee shop Standard Worker Sam!</p>
 </div>
-<div *ngIf="personality.personalityType == 3">
+<div *ngIf="ThirdLevel()">
   <h2>Business Level</h2>
   <p>You prefer steak over oranges, you are an all around fancy dude, keep up the marketing by the Cubicles Sir/Mame!</p>
 </div>
-<div *ngIf="personality.personalityType == 4">
+<div *ngIf="FourthLevel()">
   <h2>Guru Level</h2>
   <p>You prefer Fermented Squid Frattata over oranges, you are an all clairvoient dude, keep up the World Order with Illuminatii oh Great One!</p>
 </div>
