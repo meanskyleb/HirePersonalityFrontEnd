@@ -16,35 +16,31 @@ export class PersonalityDetailComponent implements OnInit {
   constructor(private _activatedRoute: ActivatedRoute, private _personalityService: PersonalityService) { }
 
   ngOnInit() {
-    this._activatedRoute.paramMap.subscribe(routeData => {
-      this._personalityService.getPersonalityType(routeData.get('id')).subscribe((singlePersonality: Personality) => {
-        this.personality = singlePersonality;
-      })
-    });
-    this.personality.getPersonalityType, [1,2,3,4];
-    [ActivatedRoute]
+      this._personalityService.getPersonalityType().subscribe((p: number) => {
+        this.personalityType = p;
+      });
   }
     EntryLevel()
     {
-      if (this.personality.getPersonalityType === 1)
+      if (this.personalityType === 1)
       return true;
       else return false;
     }
     SecondLevel() 
     {
-        if(this.personality.getPersonalityType === 2)
+        if(this.personalityType === 2)
         return true;
         else return false;
     }
     ThirdLevel() 
     {
-      if(this.personality.getPersonalityType === 3)
+      if(this.personalityType === 3)
       return true;
       else return false;
     }
     FourthLevel() 
     {
-      if(this.personality.getPersonalityType === 4)
+      if(this.personalityType === 4)
       return true;
       else return false;
     }

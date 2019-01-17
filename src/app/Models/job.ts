@@ -12,7 +12,7 @@ export interface Job {
 
     Hours: string;
 
-    DesiredPersonality: string;
+    DesiredPersonality: number;
 
     OwnerId: number;
 }
