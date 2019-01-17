@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class PersonalityCreateComponent implements OnInit {
 
   personalityForm: FormGroup;
+  personalityType;
 
   constructor(private _personalityservice: PersonalityService, private _form: FormBuilder, private _router: Router) {
   }
@@ -43,7 +44,10 @@ createForm() {
 
 onSubmit() {
   this._personalityservice.createPersonality(this.personalityForm.value).subscribe(data => {
-    this._router.navigate(['/personality/details/id'])
-  });
+    this._personalityservice.getPersonalityType()
+   this._personalityservice.getPersonalityType().subscribe(p => {
+      this._router.navigate([`/personality/details/${p}`]);
+    });
+  });   
 }
 }
