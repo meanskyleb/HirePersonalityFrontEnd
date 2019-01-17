@@ -4,19 +4,19 @@
 <hr>
 <div *ngIf="job">
   <div>
-    <label for="">Job Id</label>
+    <label for="">Job Id: </label>
     <span>{{job.jobEntityId}}</span>
   </div>
   <div>
-    <label for="">Job Title</label>
+    <label for="">Job Title: </label>
     <span>{{job.name}}</span>
   </div>
   <div>
-    <label for="">Description</label>
+    <label for="">Description: </label>
     <span>{{job.desc}}</span>
   </div>
   <div>
-    <label for="">Compensation</label>
+    <label for="">Compensation: </label>
     <span>{{job.compensation}}</span>
   </div>
   <button mat-button color="warn"  (click)="onDelete(job.jobEntityId)" value="{{job.jobEntityId}}">Delete</button>
