@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Personality} from 'src/app/Models/personality';
-import { type } from 'os';
+
 
 const ApiUrl = 'https://localhost:44311/api';
 
@@ -34,7 +34,7 @@ getPersonalitybyId(id: string) {
 
 
 updatePersonality(personality: Personality) {
-  return this._http.put(`${ApiUrl}/personality/`, personality, {headers: this.getHeaders() });
+  return this._http.put(`${ApiUrl}/personality/update`, personality, {headers: this.getHeaders() });
 }
   
 deletePersonality(id: number) {
