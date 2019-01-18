@@ -1,50 +1,40 @@
 <h1>Edit a Job.</h1>
 <hr>
 
-<div *ngIf="Job">
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editJobForm">
+<div *ngIf="job">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="updateJobForm">
     <div>
-      <div hidden>
+      <div>
         <mat-form-field>
-          <input matInput placeholder="EntityId" formControlName="EntityId" type="EntityId" required [value]="job.EntityId" />
+          <input matInput placeholder="Name" formControlName="Name" type="Name"  [value]="job.name" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="Name" formControlName="Name" type="Name" required [value]="job.Name" />
+          <input matInput placeholder="Company" formControlName="Company" type="Company"  [value]="job.company" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="Company" formControlName="Company" type="Company" required [value]="job.Company" />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field>
-          <input matInput placeholder="Desc" formControlName="Desc" type="Desc" required [value]="job.Desc" />
+          <input matInput placeholder="Desc" formControlName="Desc" type="Desc"  [value]="job.desc" />
         </mat-form-field>
       </div> 
       <div>
         <mat-form-field>
-          <input matInput placeholder="Compensation" formControlName="Compensation" type="Compensation" required [value]="job.Compensation" />
+          <input matInput placeholder="Compensation" formControlName="Compensation" type="Compensation"  [value]="job.compensation" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="Hours" formControlName="Hours" type="Hours" required [value]="job.Hours" />
+          <input matInput placeholder="Hours" formControlName="Hours" type="Hours"  [value]="job.hours" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="DesiredPersonality" formControlName="DesiredPersonality" type="DesiredPersonality" required [value]="job.DesiredPersonality" />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field>
-          <input matInput placeholder="OwnerId" formControlName="OwnerId" type="OwnerId" required [value]="job.OwnerId" />
+          <input matInput placeholder="Desired Personality" formControlName="DesiredPersonality" type="DesiredPersonality"  [value]="job.desiredPersonality" />
         </mat-form-field>
       </div>
     </div>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+    <button mat-raised-button class="nav-btn" color="primary">Save</button>
   </form>
 </div>

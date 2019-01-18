@@ -3,7 +3,6 @@ import { PersonalityService } from 'src/app/services/personalityservice/personal
 import { ActivatedRoute, Router } from '@angular/router';
 import { Personality } from 'src/app/Models/personality';
 
-
 @Component({
   selector: 'app-personality-delete',
   templateUrl: './personality-delete.component.html',
@@ -11,23 +10,22 @@ import { Personality } from 'src/app/Models/personality';
 })
 export class PersonalityDeleteComponent implements OnInit {
 
-  personality: Personality;
+personalityType;
 
   constructor(private _personalityService: PersonalityService, private _ar: ActivatedRoute, private _router: Router) {
     this._ar.paramMap.subscribe(p => {
       this._personalityService.getPersonalitybyId(p.get('id')).subscribe((singlePersonality: Personality) => {
-        this.personality = singlePersonality;
+        this.personalityType = singlePersonality;
+        console.log(this.personalityType)
+      });
     });
-  });
-}
-
+  }
   ngOnInit() {
   }
 
-  onDelete() {
-    this._personalityService.deletePersonality(this.personality.PersonalityId).subscribe(() => {
-      this._router.navigate(['/Personality']);
+  onDelete(id) {
+    this._personalityService.deletePersonality(id).subscribe(() => {
+      this._router.navigate(['/personality/index']);
     });
   }
-
 }

@@ -1,18 +1,6 @@
-<h1>Delete</h1>
-<h4>Are you sure you want to delete your test?</h4>
-
+<h1>Are you sure you want to delete your test?</h1>
 <hr>
 
-<div *ngIf="personality">
-  <div>
-    <label for="">PersonalityId</label>
-    <span>{{personality.PersonalityId}}</span>
-  </div>
-  <div>
-    <label for="">PersonalityId</label>
-    <span>{{personality.PersonalityNumber}}</span>
-  </div>
-</div>
-
-<button mat-button color="warn" (click)="onDelete()">Delete</button>
-<button mat-button color="primary" routerLink="/home">Back</button>
+<button mat-button color="warn" (click)="onDelete(personality.personalityType)" value="{{personality.personalityType}}">Delete</button>
+<button mat-button color="primary" routerLink="/personality/details/id">Back To Details</button>
+<hr>

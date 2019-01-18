@@ -12,7 +12,7 @@ export class JobService {
   constructor(private _http: HttpClient) { }
 
   getJobs() {
-    return this._http.get(`${ApiUrl}/job/display`, {headers: this.getHeaders() });
+    return this._http.get(`${ApiUrl}/job/display`, {headers: this.getHeaders()});
   }
 
   createJob(job: Job) {
@@ -20,18 +20,18 @@ export class JobService {
    }
 
   private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer $(localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${(localStorage.getItem('token'))}`);
   }
   getJob(id: string) {
-    return this._http.get(`${ApiUrl}/job/${id}`, { headers: this.getHeaders() });
+    return this._http.get(`${ApiUrl}/job/id/?id=${id}`, { headers: this.getHeaders() });
   }
 
   deleteJob(id: number) {
-    return this._http.delete(`${ApiUrl}/job/${id}`, { headers: this.getHeaders()});
+    return this._http.delete(`${ApiUrl}/job/?id=${id}`, { headers: this.getHeaders()});
   }
 
   updateJob(job: Job){
-    return this._http.put(`${ApiUrl}/job`, job, { headers: this.getHeaders() });
+    return this._http.put(`${ApiUrl}/job/?id=${job.JobEntityId}`, job, { headers: this.getHeaders() });
   }
 
 }

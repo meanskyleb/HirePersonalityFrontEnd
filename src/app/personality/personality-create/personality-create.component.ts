@@ -1,7 +1,8 @@
-import { Component, OnInit, createPlatformFactory } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 import { PersonalityService } from 'src/app/services/personalityservice/personality.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-personality-create',
@@ -11,8 +12,10 @@ import { Router } from '@angular/router';
 export class PersonalityCreateComponent implements OnInit {
 
   personalityForm: FormGroup;
-  
-  constructor(private _personalityservice: PersonalityService, private _form: FormBuilder, private _router: Router) {}
+  personalityType;
+
+  constructor(private _personalityservice: PersonalityService, private _form: FormBuilder, private _router: Router) {
+  }
    
 
   ngOnInit() {
@@ -24,14 +27,24 @@ export class PersonalityCreateComponent implements OnInit {
 
 createForm() {
   this.personalityForm = this._form.group({
-    PersonalityId: new FormControl,
-    PersonalityType: new FormControl
+    Design: new FormControl,
+    Problem: new FormControl,
+    Picture: new FormControl,
+    Minutiae: new FormControl,
+    Leadership: new FormControl,
+    Teamwork: new FormControl,
+    Conversation: new FormControl,
+    Technical: new FormControl,
+    Relationship: new FormControl,
+    Independent: new FormControl,
+    PublicSpeaking: new FormControl,
+    Quick: new FormControl
   });
 }
 
 onSubmit() {
   this._personalityservice.createPersonality(this.personalityForm.value).subscribe(data => {
-    this._router.navigate(['/personality']);
-  });
+      this._router.navigate([`/personality/details`]);
+    });
 }
 }

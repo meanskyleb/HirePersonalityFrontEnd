@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { JobService } from 'src/app/services/job.service';
 import { Job } from 'src/app/Models/job';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-job-detail',
@@ -10,9 +11,9 @@ import { Job } from 'src/app/Models/job';
 })
 export class JobDetailComponent implements OnInit {
   job: Job;
-
+  personalityType: number;
   constructor(private _activatedRoute: ActivatedRoute, private _jobService: JobService) { }
-
+  
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
       this._jobService.getJob(routeData.get('id')).subscribe((singleJob: Job) => {
@@ -20,5 +21,5 @@ export class JobDetailComponent implements OnInit {
       });
     });
   }
-
 }
+

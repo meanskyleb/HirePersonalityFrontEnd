@@ -16,16 +16,16 @@ job: Job;
     this._ar.paramMap.subscribe(p => {
       this._jobService.getJob(p.get('id')).subscribe((singleJob: Job) => {
         this.job = singleJob;
+        console.log(this.job)
       });
     });
-   }
-
+  }
   ngOnInit() {
   }
 
-  onDelete() {
-    this._jobService.deleteJob(this.job.JobEntityId).subscribe(() => {
-      this._router.navigate(['/job']);
+  onDelete(id) {
+    this._jobService.deleteJob(id).subscribe(() => {
+      this._router.navigate(['/job/index']);
     });
   }
 }

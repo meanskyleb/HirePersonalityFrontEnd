@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Job } from 'src/app/Models/job';
 import { JobService } from 'src/app/services/job.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-job-update',
@@ -12,8 +13,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 export class JobUpdateComponent implements OnInit {
 
   job: Job;
-
-  editJobForm: FormGroup;
+  updateJobForm: FormGroup;
   constructor(private _form: FormBuilder,
               private _jobservice: JobService,
               private _ar: ActivatedRoute,
@@ -31,7 +31,7 @@ export class JobUpdateComponent implements OnInit {
   }
 
   createForm() {
-    this.editJobForm = this._form.group({
+    this.updateJobForm = this._form.group({
       EntityId: new FormControl(this.job.JobEntityId),
       Name: new FormControl(this.job.Name),
       Company: new FormControl(this.job.Company),
@@ -44,15 +44,16 @@ export class JobUpdateComponent implements OnInit {
 
   onSubmit(form) {
     const updateJob: Job = {
-      JobEntityId: form.value.JobEntityId,
+      JobEntityId: this.job.JobEntityId,
       Name: form.value.Name,
       Company: form.value.Company,
       Desc: form.value.Desc,
       Compensation: form.value.Compensation,
       Hours: form.value.Hours,
       DesiredPersonality: form.value.DesiredPersonality,
-      OwnerId: form.value.OwnerId
+      OwnerId: this.job.OwnerId
     };
+    console.log(updateJob);
     this._jobservice.updateJob(updateJob).subscribe(d => {
       this._router.navigate(['/job']);
     });

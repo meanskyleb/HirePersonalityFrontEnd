@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -30,5 +29,5 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this._authService.login(this._loginForm.value);
-  }
+}
 }
