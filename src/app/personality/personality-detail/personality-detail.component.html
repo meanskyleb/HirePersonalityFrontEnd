@@ -1,7 +1,7 @@
 <h1>Your Test Results</h1>
 
 <hr>
-<div *ngIf="personality">
+<!-- <div *ngIf="personality">
   <div> 
     <label for="">Personality Id</label>
     <span>{{personality.PersonalityEntityId}}</span>
@@ -14,7 +14,7 @@
     <label for="">Personality Type</label>
     <span>{{personality.PersonalityType}}</span>
   </div>
-</div>
+</div> -->
 <div *ngIf= "SecondLevel()">
   <h2>Skilled Level</h2>
   <p>You prefer chicken fingers over oranges, you are an all around awesome dude, keep up the amateur writing in the coffee shop Standard Worker Sam!</p>
@@ -30,5 +30,5 @@
 
 
 <button mat-raised-button class="edit" routerLink="/personality/create">Edit</button>
-<button mat-raised-button class="delete" routerLink="/personality/delete/id">Delete</button>
+<button mat-raised-button class="delete" routerLink="/personality/delete/{{personality.personalityEntityId}}">Delete</button>
 
