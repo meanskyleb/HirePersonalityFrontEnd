@@ -10,7 +10,7 @@ import { PersonalityService } from 'src/app/services/personalityservice/personal
 })
 export class PersonalityDetailComponent implements OnInit {
 
-  personality: Personality;
+  personality;
   personalityType: number;
 
   constructor(private _activatedRoute: ActivatedRoute, private _personalityService: PersonalityService) { }
@@ -18,6 +18,8 @@ export class PersonalityDetailComponent implements OnInit {
   ngOnInit() {
       this._personalityService.getPersonalityType().subscribe((p: number) => {
         this.personalityType = p;
+        console.log(p);
+        this.getPersonality(p);
       });
   }
     EntryLevel()
@@ -44,7 +46,11 @@ export class PersonalityDetailComponent implements OnInit {
       return true;
       else return false;
     }
-    
+    getPersonality(id){
+      this._personalityService.getPersonalitybyId(id).subscribe(p => {
+        this.personality=p;
+      });
+    }
   }
 
 
