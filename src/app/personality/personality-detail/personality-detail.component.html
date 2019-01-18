@@ -15,6 +15,19 @@
     <span>{{personality.PersonalityType}}</span>
   </div>
 </div>
+<div *ngIf= "SecondLevel()">
+  <h2>Skilled Level</h2>
+  <p>You prefer chicken fingers over oranges, you are an all around awesome dude, keep up the amateur writing in the coffee shop Standard Worker Sam!</p>
+</div>
+<div *ngIf="ThirdLevel()">
+  <h2>Business Level</h2>
+  <p>You prefer steak over oranges, you are an all around fancy dude, keep up the marketing by the Cubicles Sir/Mame!</p>
+</div>
+<div *ngIf="FourthLevel()">
+  <h2>Guru Level</h2>
+  <p>You prefer Fermented Squid Frattata over oranges, you are an all clairvoient dude, keep up the World Order with Illuminatii oh Great One!</p>
+</div>
+
 
 <button mat-raised-button class="edit" routerLink="/personality/create">Edit</button>
 <button mat-raised-button class="delete" routerLink="/personality/delete/id">Delete</button>

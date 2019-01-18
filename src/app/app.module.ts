@@ -68,7 +68,7 @@ const routes = [
   {path: 'job', canActivate: [AuthGuard] , children: [
       {path: 'index', component: JobIndexComponent},
       {path: 'create', component: JobCreateComponent},
-      {path: 'details/:id', component: JobDetailComponent},
+      {path: 'details/', component: JobDetailComponent},
       {path: 'update/:id', component: JobUpdateComponent},
       {path: 'delete/:id', component: JobDeleteComponent}
 ]}

@@ -44,10 +44,7 @@ createForm() {
 
 onSubmit() {
   this._personalityservice.createPersonality(this.personalityForm.value).subscribe(data => {
-    this._personalityservice.getPersonalityType()
-   this._personalityservice.getPersonalityType().subscribe(p => {
-      this._router.navigate([`/personality/details/${p}`]);
+      this._router.navigate([`/personality/details/`]);
     });
-  });   
 }
 }
