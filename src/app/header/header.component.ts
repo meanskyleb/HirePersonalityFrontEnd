@@ -10,11 +10,12 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   username: string;
   isLoggedIn: boolean;
-
+  isAdminUser: boolean;
   constructor(private _authService: AuthService, private _router: Router) { }
 
   ngOnInit() {
     this.isLoggedIn = this._authService.currentUser();
+    this.isAdminUser = this._authService.isAdminUser();
   }
 
 

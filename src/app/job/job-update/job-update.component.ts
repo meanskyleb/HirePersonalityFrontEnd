@@ -32,7 +32,6 @@ export class JobUpdateComponent implements OnInit {
 
   createForm() {
     this.updateJobForm = this._form.group({
-      EntityId: new FormControl(this.job.JobEntityId),
       Name: new FormControl(this.job.Name),
       Company: new FormControl(this.job.Company),
       Desc: new FormControl(this.job.Desc),
