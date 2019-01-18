@@ -64,8 +64,8 @@ personality: Personality;
       PublicSpeaking: form.value.PublicSpeaking,
       Quick: form.value.Quick
     };
-    this._personalityService.updatePersonality(updatePersonality).subscribe(d => {
-      this._router.navigate(['/personality/create']);
+    this._personalityService.updatePersonality(updatePersonality).subscribe(data => {
+      this._router.navigate(['/personality/details']);
     });
   }
 }
