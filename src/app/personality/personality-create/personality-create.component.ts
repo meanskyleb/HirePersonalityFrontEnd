@@ -44,7 +44,7 @@ createForm() {
 
 onSubmit() {
   this._personalityservice.createPersonality(this.personalityForm.value).subscribe(data => {
-      this._router.navigate([`/personality/details/`]);
+      this._router.navigate([`/personality/details`]);
     });
 }
 }

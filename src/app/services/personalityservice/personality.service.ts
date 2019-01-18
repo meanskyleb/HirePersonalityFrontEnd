@@ -34,7 +34,7 @@ getPersonalitybyId(id: string) {
 
 
 updatePersonality(personality: Personality) {
-  return this._http.put(`${ApiUrl}/personality/?id=`, personality, {headers: this.getHeaders() });
+  return this._http.put(`${ApiUrl}/personality/`, personality, {headers: this.getHeaders() });
 }
   
 deletePersonality(id: number) {
