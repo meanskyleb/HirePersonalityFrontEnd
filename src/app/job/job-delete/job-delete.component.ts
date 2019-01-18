@@ -19,8 +19,7 @@ job: Job;
         console.log(this.job)
       });
     });
-   }
-
+  }
   ngOnInit() {
   }
 

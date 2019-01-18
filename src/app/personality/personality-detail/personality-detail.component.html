@@ -9,6 +9,7 @@
 
 <div class="technical" *ngIf= "SecondLevel()">
   <h2>Technically Minded</h2>
+
   <p>You prefer chicken fingers over oranges, you are an all around awesome dude, keep up the amateur writing in the coffee shop Standard Worker Sam!</p>
 </div>
 
@@ -23,6 +24,6 @@
 </div>
 
 
-<button mat-raised-button class="edit" routerLink="/personality/update/id">Edit</button>
-<button mat-raised-button class="delete" routerLink="/personality/delete/id">Delete</button>
 
+<button mat-raised-button class="edit" routerLink="/personality/create">Edit</button>
+<button mat-raised-button class="delete" routerLink="/personality/delete/{{personality.personalityEntityId}}">Delete</button>
