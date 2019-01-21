@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng-build --prod",
-    "start": "serve -s dist/hire-personality-front-end"
+    "start": "serve -s dist/hirepersonality-zkz"
   },
   "private": true,
   "dependencies": {
