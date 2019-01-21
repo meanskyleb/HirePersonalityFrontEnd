@@ -31,7 +31,8 @@
     "rxjs": "~6.3.3",
     "serve": "^10.1.1",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.27"
+    "zone.js": "~0.8.27",
+    "node.js": "11.7.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.12.1",
