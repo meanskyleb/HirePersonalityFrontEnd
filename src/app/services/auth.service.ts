@@ -30,6 +30,7 @@ export class AuthService {
         console.log(token.admin);
         this.isLoggedIn.next(true);
         this._router.navigate(['/home']);
+        window.location.reload();
       });
     }
 
