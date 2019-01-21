@@ -1,22 +1,25 @@
-<div class="navbar">
+  <div class="navbar">
     <ul>
       <li>
         <span>
-        <img src="./assets/img/hplogo1.jpg" id="logo"
-        style="height: 35%" style="width: 35%"
-      routerLink = "/home"></span></li>
-      <li><a routerLink = "/job/index" routerLinkActive = "active">Jobs</a></li>
-      <li><a routerLink = "/personality/index" routerLinkActive = "active">Personality Test</a></li>
-      <li><a routerLink = "/about" routerLinkActive = "active">About</a></li>
-      <li><a routerLink = "/contact" routerLinkActive = "active">Contact</a></li>
-      <div style="float: right">
-        <div *ngIf="!isLoggedIn" class="login-btn">
-          <li><a routerLink = "/login" routerLinkActive = "active">Login</a></li>
-          <li><a routerLink = "/registration" routerLinkActive = "active">Register</a></li>   
-        </div>
-        <div *ngIf="isLoggedIn" class="logout-btn">
-          <li><a id="logout" mat-stroked-button (click)="onLogout()">Logout</a></li>
-        </div>
-      </div>
+          <img src="./assets/img/hplogo1.jpg" id="logo"
+          style="height: 35%" style="width: 35%"
+          routerLink = "/home"></span></li>
+          <li><a routerLink = "/job/index" routerLinkActive = "active">Jobs</a></li>
+          <li *ngIf= "!testTaken"><a routerLink = "/personality/index" routerLinkActive = "active">Personality Test</a></li>
+          <li *ngIf= "testTaken"><a routerLink = "/personality/details" routerLinkActive = "active">View Personality</a></li>
+          <li><a routerLink = "/about" routerLinkActive = "active">About</a></li>
+          <li><a routerLink = "/contact" routerLinkActive = "active">Contact</a></li>
+          <div style="float: right">
+            <div *ngIf="!isLoggedIn" class="login-btn">
+              <li><a routerLink = "/login" routerLinkActive = "active">Login</a></li>
+              <li><a routerLink = "/registration" routerLinkActive = "active">Register</a></li>   
+             </div>
+              <div *ngIf="isLoggedIn" class="logout-btn">
+                <li *ngIf="isAdminUser"><a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Admin</a></li>
+                <li><a id="logout" mat-stroked-button (click)="onLogout()">Logout</a></li>
+              </div>
+          </div>
     </ul>
 </div>
+

@@ -37,7 +37,7 @@ updatePersonality(personality: Personality) {
 }
   
 deletePersonality() {
-  return this._http.delete(`${ApiUrl}/personality/delete`, {headers: this.getHeaders()});
+  return this._http.delete(`${ApiUrl}/personality/Delete`, {headers: this.getHeaders()});
 }
 
 getPersonalityType() {

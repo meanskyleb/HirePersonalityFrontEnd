@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { JobService } from '../services/job.service';
+import { Job } from '../Models/job';
 
 @Component({
   selector: 'app-job',
@@ -6,23 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./job.component.css']
 })
 export class JobComponent implements OnInit {
+constructor(private _jobService: JobService){
+  this.onFindJobs();
+}
 
-  // onFindJobs() : void {
-//       this._jobService.getJobs().subscribe(Job => {
-//         this.jobs=Job;
-//         this.jobs.reverse();
-//     })
-//   }    
-// @Input() 
-//     get jobs(): any {
-//       return this.jobs
-//     }
-//     set jobs(job: any) {
-//       this.jobs = (job)
-//     }  
+@Input() 
+    get jobs(): any {
+      return this.jobs
+    }
+    set jobs(job: any) {
+      this.jobs = (job)
+    }  
 
- ngOnInit(){}
-//       this.onFindJobs();
-//     }
+onFindJobs() {
+    this._jobService.getJobs().subscribe((job: Job[]) => {
+      this.jobs = job;
+      this.jobs.reverse();
+    })
+  }    
 
+ ngOnInit(){
+   
+    }
 }
