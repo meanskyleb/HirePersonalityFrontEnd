@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
 import { RegisterUser } from '../Models/RegisterUser';
 
 
-const Api_Url = "https://localhost:44311";
+const Api_Url = "https://hirepersonalityapi20190118021946.azurewebsites.net/";
 
 @Injectable()
 
