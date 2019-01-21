@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  private _loginForm: FormGroup;
+  loginForm: FormGroup;
 
   constructor(private _form: FormBuilder, private _authService: AuthService,) {
     this.createForm();
@@ -22,14 +22,14 @@ export class LoginComponent implements OnInit {
 
 
   createForm() {
-    this._loginForm = this._form.group({
+    this.loginForm = this._form.group({
       username: new FormControl,
       password: new FormControl
     });
   }
 
   onSubmit() {
-    this._authService.login(this._loginForm.value);
+    this._authService.login(this.loginForm.value);
 }
 
 }
