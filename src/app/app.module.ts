@@ -10,6 +10,7 @@ import {
   MatInputModule,
   MatTableModule,
   MatSliderModule,
+  MatCardModule
  } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -73,7 +74,8 @@ const routes = [
       {path: 'create', component: JobCreateComponent},
       {path: 'details/:id', component: JobDetailComponent},
       {path: 'update/:id', component: JobUpdateComponent},
-      {path: 'delete/:id', component: JobDeleteComponent}
+      {path: 'delete/:id', component: JobDeleteComponent},
+      {path: 'cardview', component: JobComponent}
 ]}
 ]
 
@@ -113,6 +115,7 @@ const routes = [
     MatInputModule,
     MatTableModule,
     MatSliderModule,
+    MatCardModule,
     RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'}),
     BrowserAnimationsModule
   ],
