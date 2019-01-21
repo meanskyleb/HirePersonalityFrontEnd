@@ -10,14 +10,12 @@
           <li><a routerLink = "/about" routerLinkActive = "active">About</a></li>
           <li><a routerLink = "/contact" routerLinkActive = "active">Contact</a></li>
           <div style="float: right">
-              <div *ngIf="!isLoggedIn" class="login-btn">
-                <li><a routerLink = "/login" routerLinkActive = "active">Login</a></li>
-                <li><a routerLink = "/registration" routerLinkActive = "active">Register</a></li>   
-              </div>
+            <div *ngIf="!isLoggedIn" class="login-btn">
+              <li><a routerLink = "/login" routerLinkActive = "active">Login</a></li>
+              <li><a routerLink = "/registration" routerLinkActive = "active">Register</a></li>   
+             </div>
               <div *ngIf="isLoggedIn" class="logout-btn">
-                       <li *ngIf="isAdminUser">
-                          <a routerLink="/admin" routerLinkActive="active"
-                          [routerLinkActiveOptions]="{ exact: true }">Admin</a></li>
+                <li *ngIf="isAdminUser"><a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Admin</a></li>
                 <li><a id="logout" mat-stroked-button (click)="onLogout()">Logout</a></li>
               </div>
           </div>

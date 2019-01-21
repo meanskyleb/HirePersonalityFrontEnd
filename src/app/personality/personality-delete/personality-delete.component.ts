@@ -23,8 +23,8 @@ personalityType;
   ngOnInit() {
   }
 
-  onDelete(id) {
-    this._personalityService.deletePersonality(id).subscribe(() => {
+  onDelete() {
+    this._personalityService.deletePersonality().subscribe(() => {
       this._router.navigate(['/personality/index']);
     });
   }
