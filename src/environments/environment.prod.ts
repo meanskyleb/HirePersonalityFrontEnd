@@ -10,8 +10,4 @@ switch (window.location.hostname) {
     break;
   default:
     Api_Url = 'https://localhost:44311/';
-}
-
-export const environment = {
-  production: false
 };
