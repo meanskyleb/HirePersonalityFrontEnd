@@ -30,6 +30,7 @@ export class AuthService {
         console.log(token.admin);
         this.isLoggedIn.next(true);
         this._router.navigate(['/home']);
+        window.location.reload();
       });
     }
 
@@ -51,6 +52,7 @@ export class AuthService {
     
       this._http.post(`${Api_Url}/api/Account/Logout`, {headers: authHeader});
       this._router.navigate(['/login'])
+      window.location.reload();
     }
 }
 

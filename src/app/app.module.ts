@@ -10,6 +10,7 @@ import {
   MatInputModule,
   MatTableModule,
   MatSliderModule,
+  MatCardModule
  } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,10 +37,12 @@ import { JobCreateComponent } from './job/job-create/job-create.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
 import { JobUpdateComponent } from './job/job-update/job-update.component';
 import { JobDeleteComponent } from './job/job-delete/job-delete.component';
+import { AdminComponent } from './admin/admin.component';
 
 //Services
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guards';
+import { AdminGuard } from './guards/auth/admin.guard'
 import { PersonalityService } from './services/personalityservice/personality.service';
 import { JobService } from './services/job.service';
 
@@ -55,6 +58,7 @@ const routes = [
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'admin', component: AdminComponent},
   {
 
     path: 'personality', canActivate: [AuthGuard] , children: [
@@ -70,7 +74,8 @@ const routes = [
       {path: 'create', component: JobCreateComponent},
       {path: 'details/:id', component: JobDetailComponent},
       {path: 'update/:id', component: JobUpdateComponent},
-      {path: 'delete/:id', component: JobDeleteComponent}
+      {path: 'delete/:id', component: JobDeleteComponent},
+      {path: 'cardview', component: JobComponent}
 ]}
 ]
 
@@ -96,7 +101,8 @@ const routes = [
     JobCreateComponent,
     JobDetailComponent,
     JobUpdateComponent,
-    JobDeleteComponent
+    JobDeleteComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -109,12 +115,14 @@ const routes = [
     MatInputModule,
     MatTableModule,
     MatSliderModule,
+    MatCardModule,
     RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'}),
     BrowserAnimationsModule
   ],
   providers: [
     AuthService,
     AuthGuard,
+    AdminGuard,
     PersonalityService,
     JobService
   ],

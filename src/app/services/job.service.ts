@@ -15,6 +15,10 @@ export class JobService {
     return this._http.get(`${ApiUrl}/job/display`, {headers: this.getHeaders()});
   }
 
+  getJobsByType(id: number) {
+    return this._http.get(`${ApiUrl}/job/displaybytype/?type=${id}`, {headers: this.getHeaders()});
+  }
+
   createJob(job: Job) {
     return this._http.post(`${ApiUrl}/job`, job, { headers:  this.getHeaders()});
    }
@@ -22,6 +26,7 @@ export class JobService {
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${(localStorage.getItem('token'))}`);
   }
+
   getJob(id: string) {
     return this._http.get(`${ApiUrl}/job/id/?id=${id}`, { headers: this.getHeaders() });
   }
