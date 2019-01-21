@@ -5,7 +5,7 @@ export const environment = {
 export let Api_Url = '';
 
 switch (window.location.hostname) {
-  case 'hirepersonality.herokuapp.com':
+  case 'hirepersonality-zkz.herokuapp.com':
     Api_Url = 'https://hirepersonalityapi20190118021946.azurewebsites.net/'
     break;
   default:
