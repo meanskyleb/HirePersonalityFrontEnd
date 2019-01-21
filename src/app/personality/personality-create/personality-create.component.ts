@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class PersonalityCreateComponent implements OnInit {
 
   personalityForm: FormGroup;
-  personalityType;
 
   constructor(private _personalityservice: PersonalityService, private _form: FormBuilder, private _router: Router) {
   }
