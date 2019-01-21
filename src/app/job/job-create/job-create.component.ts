@@ -33,7 +33,7 @@ export class JobCreateComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(f:any) {
     this._jobService.createJob(this.jobForm.value).subscribe(data =>{
       this._router.navigate(['/job/index'])
     });
