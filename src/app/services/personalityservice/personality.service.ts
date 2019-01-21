@@ -36,8 +36,8 @@ updatePersonality(personality: Personality) {
   return this._http.put(`${ApiUrl}/personality/update`, personality, {headers: this.getHeaders() });
 }
   
-deletePersonality(id: number) {
-  return this._http.delete(`${ApiUrl}/personality/?id=${id}`, {headers: this.getHeaders()});
+deletePersonality() {
+  return this._http.delete(`${ApiUrl}/personality/`, {headers: this.getHeaders()});
 }
 
 getPersonalityType() {

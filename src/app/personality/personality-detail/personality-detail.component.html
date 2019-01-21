@@ -23,7 +23,50 @@
   <p>You prefer Fermented Squid Frattata over oranges, you are an all clairvoient dude, keep up the World Order with Illuminatii oh Great One!</p>
 </div>
 
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let row" routerLink="/job/id/{{row.JobEntityId}}"> 
+        <i class="material-icons">library_books</i>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="JobEntityId">
+      <mat-header-cell *matHeaderCellDef>Job #</mat-header-cell>
+      <mat-cell *matCellDef="let job"> {{job.jobEntityId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef>Job Name</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Company">
+      <mat-header-cell *matHeaderCellDef>Company Name</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.company}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Desc">
+      <mat-header-cell *matHeaderCellDef>Job Description</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.desc}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Compensation">
+      <mat-header-cell *matHeaderCellDef>Compensation</mat-header-cell>
+      <mat-cell *matCellDef="let row"> ${{row.compensation}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Hours">
+      <mat-header-cell *matHeaderCellDef>Hours/Week</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.hours}} </mat-cell>
+    </ng-container>
+  </mat-table>
+</div>
 
 
 <button mat-raised-button class="edit" routerLink="/personality/create">Edit</button>
-<button mat-raised-button class="delete" routerLink="/personality/delete/{{personality.personalityEntityId}}">Delete</button>
+<button mat-raised-button class="delete" routerLink="/personality/delete/">Delete</button>
