@@ -11,3 +11,7 @@ switch (window.location.hostname) {
   default:
     Api_Url = 'https://localhost:44311/';
 }
+
+export const environment = {
+  production: false
+};
