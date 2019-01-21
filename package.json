@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "npm": "6.4",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -32,7 +33,6 @@
     "serve": "^10.1.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.27",
-    "node.js": "11.7.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.12.1",
