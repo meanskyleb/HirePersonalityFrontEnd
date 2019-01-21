@@ -5,9 +5,7 @@ import { UserInfo } from '../Models/UserInfo';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { RegisterUser } from '../Models/RegisterUser';
-
-
-const Api_Url = "https://localhost:44311";
+import { Api_Url} from '../../environments/environment.prod';
 
 @Injectable()
 
