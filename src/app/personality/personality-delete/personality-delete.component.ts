@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonalityService } from 'src/app/services/personalityservice/personality.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Personality } from 'src/app/Models/personality';
+import {  Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-personality-delete',
@@ -9,17 +9,10 @@ import { Personality } from 'src/app/Models/personality';
   styleUrls: ['./personality-delete.component.css']
 })
 export class PersonalityDeleteComponent implements OnInit {
-
-personalityType;
-
-  constructor(private _personalityService: PersonalityService, private _ar: ActivatedRoute, private _router: Router) {
-    this._ar.paramMap.subscribe(p => {
-      this._personalityService.getPersonalitybyId(p.get('id')).subscribe((singlePersonality: Personality) => {
-        this.personalityType = singlePersonality;
-        console.log(this.personalityType)
-      });
-    });
+  
+  constructor(private _personalityService: PersonalityService, private _router: Router) {
   }
+
   ngOnInit() {
   }
 
