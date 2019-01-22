@@ -20,6 +20,7 @@ export class JobUpdateComponent implements OnInit {
               private _router: Router) { 
                 this._ar.paramMap.subscribe(p => {
                   this._jobservice.getJob(p.get('id')).subscribe((singleJob: Job) => {
+                    localStorage.setItem("jobEntityId", p.get('id'));
                     this.job = singleJob;
                     this.createForm();
                   })
@@ -32,6 +33,7 @@ export class JobUpdateComponent implements OnInit {
 
   createForm() {
     this.updateJobForm = this._form.group({
+      JobEntityId: new FormControl(this.job.JobEntityId),
       Name: new FormControl(this.job.Name),
       Company: new FormControl(this.job.Company),
       Desc: new FormControl(this.job.Desc),
@@ -43,14 +45,13 @@ export class JobUpdateComponent implements OnInit {
 
   onSubmit(form) {
     const updateJob: Job = {
-      JobEntityId: this.job.JobEntityId,
+      JobEntityId: parseInt(localStorage.getItem("jobEntityId")),
       Name: form.value.Name,
       Company: form.value.Company,
       Desc: form.value.Desc,
       Compensation: form.value.Compensation,
       Hours: form.value.Hours,
       DesiredPersonality: form.value.DesiredPersonality,
-      OwnerId: this.job.OwnerId
     };
     console.log(updateJob);
     this._jobservice.updateJob(updateJob).subscribe(d => {

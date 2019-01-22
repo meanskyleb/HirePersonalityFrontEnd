@@ -13,6 +13,4 @@ export interface Job {
     Hours: string;
 
     DesiredPersonality: number;
-
-    OwnerId: number;
 }
