@@ -7,3 +7,8 @@ hr {
 h2 {
     text-align: center;
 }
+.meme {
+    display: inline-block;
+    text-align: center;
+    
+}
