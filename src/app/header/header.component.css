@@ -5,3 +5,8 @@
 #logout:hover {
     color:rgb(200, 5, 5);
 }
+
+ul {
+    padding: 0px;
+    margin: 5px;
+}
