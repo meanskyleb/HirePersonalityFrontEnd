@@ -36,7 +36,7 @@ export class JobService {
   }
 
   updateJob(job: Job){
-    return this._http.put(`${Api_Url}/api/job/?id=${job.JobEntityId}`, job, { headers: this.getHeaders() });
+    return this._http.put(`${Api_Url}/api/job/`, job, { headers: this.getHeaders() });
   }
 
 }
