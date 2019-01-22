@@ -17,6 +17,7 @@ form {
 
 .back {
     background-color: white;
+    margin: 5px;
 }
 
 .back:hover {

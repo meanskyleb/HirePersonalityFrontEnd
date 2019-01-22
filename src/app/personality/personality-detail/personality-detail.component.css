@@ -8,6 +8,7 @@ hr {
     background-color: black;
     color: rgb(200, 5, 5);
     font-family: 'Bungee', 'cursive';
+    margin: 5px;
 }
 
 .edit:hover {
@@ -17,6 +18,7 @@ hr {
 .delete {
     color: rgb(200, 5, 5);
     font-family: 'Bungee', 'cursive';
+    margin: 5px;
 }
 
 .delete:hover {
