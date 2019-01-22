@@ -54,8 +54,7 @@ import { JobService } from './services/job.service';
 const routes = [
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: '', component:HomeComponent},
+  {defaultpath: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'contact', component: ContactComponent},
