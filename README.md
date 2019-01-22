@@ -1,6 +1,8 @@
 # HirePersonalityFrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3. It's purpose is as a learning tool to demonstrate understanding of angular and how it interacts with .Net Core. For simplification, all users can create jobs, edit jobs, and delete jobs.
+
+To clone the back end please follow this link: https://github.com/zackigoldberg/HirePersonalityBackEnd
 
 ## Development server
 
