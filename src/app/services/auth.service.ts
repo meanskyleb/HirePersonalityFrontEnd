@@ -17,11 +17,11 @@ export class AuthService {
   constructor(private _http: HttpClient, private _router:Router) { }
 
     register(regUserData: RegisterUser) {
-      return this._http.post(`${Api_Url}api/Auth/Register`, regUserData); 
+      return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData); 
     }
     
     login(loginInfo) {
-      return this._http.post(`${Api_Url}api/Auth/Login`, loginInfo).subscribe( (token: any) => {
+      return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
         localStorage.setItem('token', token.token);
         localStorage.setItem('admin', token.admin);
         console.log(token.admin);

@@ -12,7 +12,7 @@ export class PersonalityService {
   constructor(private _http: HttpClient) { }
 
   getPersonality() {
-    return this._http.get(`${Api_Url}api/personality/display`, {headers: this.getHeaders()});
+    return this._http.get(`${Api_Url}/api/personality/display`, {headers: this.getHeaders()});
   }
 
 
@@ -22,24 +22,24 @@ private getHeaders() {
 
 
 createPersonality(personality: Personality) {
-  return this._http.post(`${Api_Url}api/personality/create`, personality, {headers: this.getHeaders()});
+  return this._http.post(`${Api_Url}/api/personality/create`, personality, {headers: this.getHeaders()});
 }
 
 
 getPersonalitybyId(id: string) {
-  return this._http.get(`${Api_Url}api/personality/id/?id=${id}`, {headers: this.getHeaders() });
+  return this._http.get(`${Api_Url}/api/personality/id/?id=${id}`, {headers: this.getHeaders() });
 }
 
 
 updatePersonality(personality: Personality) {
-  return this._http.put(`${Api_Url}api/personality/update`, personality, {headers: this.getHeaders() });
+  return this._http.put(`${Api_Url}/api/personality/update`, personality, {headers: this.getHeaders() });
 }
   
 deletePersonality() {
-  return this._http.delete(`${Api_Url}api/personality/Delete`, {headers: this.getHeaders()});
+  return this._http.delete(`${Api_Url}/api/personality/Delete`, {headers: this.getHeaders()});
 }
 
 getPersonalityType() {
-   return this._http.get(`${Api_Url}api/Personality/Type` , {headers: this.getHeaders()});
+   return this._http.get(`${Api_Url}/api/Personality/Type` , {headers: this.getHeaders()});
   }
 }

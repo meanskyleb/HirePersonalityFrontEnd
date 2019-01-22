@@ -12,15 +12,15 @@ export class JobService {
   constructor(private _http: HttpClient) { }
 
   getJobs() {
-    return this._http.get(`${Api_Url}api/job/display`, {headers: this.getHeaders()});
+    return this._http.get(`${Api_Url}/api/job/display`, {headers: this.getHeaders()});
   }
 
   getJobsByType(id: number) {
-    return this._http.get(`${Api_Url}api/job/displaybytype/?type=${id}`, {headers: this.getHeaders()});
+    return this._http.get(`${Api_Url}/api/job/displaybytype/?type=${id}`, {headers: this.getHeaders()});
   }
 
   createJob(job: Job) {
-    return this._http.post(`${Api_Url}api/job`, job, { headers:  this.getHeaders()});
+    return this._http.post(`${Api_Url}/api/job`, job, { headers:  this.getHeaders()});
    }
 
   private getHeaders() {
@@ -28,11 +28,11 @@ export class JobService {
   }
 
   getJob(id: string) {
-    return this._http.get(`${Api_Url}api/job/id/?id=${id}`, { headers: this.getHeaders() });
+    return this._http.get(`${Api_Url}/api/job/id/?id=${id}`, { headers: this.getHeaders() });
   }
 
   deleteJob(id: number) {
-    return this._http.delete(`${Api_Url}api/job/?id=${id}`, { headers: this.getHeaders()});
+    return this._http.delete(`${Api_Url}/api/job/?id=${id}`, { headers: this.getHeaders()});
   }
 
   updateJob(job: Job){
