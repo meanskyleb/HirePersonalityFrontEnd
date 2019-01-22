@@ -24,6 +24,7 @@ export class AuthService {
       return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
         localStorage.setItem('token', token.token);
         localStorage.setItem('admin', token.admin);
+        localStorage.setItem('userId', token.user.id);
         console.log(token.admin);
         this.isLoggedIn.next(true);
         this._router.navigate(['/home']);
