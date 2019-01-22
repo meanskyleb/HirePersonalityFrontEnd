@@ -19,8 +19,7 @@ export class JobUpdateComponent implements OnInit {
               private _ar: ActivatedRoute,
               private _router: Router) { 
                 this._ar.paramMap.subscribe(p => {
-                  this._jobservice.getJob(p.get('id')).subscribe((singleJob: any) => {
-                    localStorage.setItem("jobEntityId", singleJob.JobEntityId.toString());
+                  this._jobservice.getJob(p.get('id')).subscribe((singleJob: Job) => {
                     this.job = singleJob;
                     this.createForm();
                   })
@@ -45,7 +44,7 @@ export class JobUpdateComponent implements OnInit {
 
   onSubmit(form) {
     const updateJob: Job = {
-      JobEntityId: parseInt(localStorage.getItem("jobEntityId")),
+      JobEntityId: this.job.JobEntityId,
       Name: form.value.Name,
       Company: form.value.Company,
       Desc: form.value.Desc,
