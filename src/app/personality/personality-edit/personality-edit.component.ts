@@ -3,8 +3,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { PersonalityService } from 'src/app/services/personalityservice/personality.service';
 import { ActivatedRoute } from '@angular/router';
 import { Personality } from 'src/app/Models/personality';
-import { Router} from '@angular/router'
-import { AnyMxRecord } from 'dns';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-personality-edit',
