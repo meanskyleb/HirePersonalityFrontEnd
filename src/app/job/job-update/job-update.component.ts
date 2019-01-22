@@ -19,7 +19,7 @@ export class JobUpdateComponent implements OnInit {
               private _ar: ActivatedRoute,
               private _router: Router) { 
                 this._ar.paramMap.subscribe(p => {
-                  this._jobservice.getJob(p.get('id')).subscribe((singleJob: Job) => {
+                  this._jobservice.getJob(p.get('id')).subscribe((singleJob: any) => {
                     localStorage.setItem("jobEntityId", singleJob.JobEntityId.toString());
                     this.job = singleJob;
                     this.createForm();
