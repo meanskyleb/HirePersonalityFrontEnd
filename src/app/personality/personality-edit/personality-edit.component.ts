@@ -4,6 +4,7 @@ import { PersonalityService } from 'src/app/services/personalityservice/personal
 import { ActivatedRoute } from '@angular/router';
 import { Personality } from 'src/app/Models/personality';
 import { Router} from '@angular/router'
+import { AnyMxRecord } from 'dns';
 
 @Component({
   selector: 'app-personality-edit',
@@ -19,7 +20,7 @@ personality: Personality;
               private _ar: ActivatedRoute,
               private _router: Router) {
     this._ar.paramMap.subscribe(p => {
-      this._personalityService.getPersonalitybyId(p.get('id')).subscribe((singlePersonality: Personality) => {
+      this._personalityService.getPersonalitybyId(localStorage.getItem('userId')).subscribe((singlePersonality: Personality) => {
         this.personality = singlePersonality;
         this.createForm();
       });
@@ -48,9 +49,7 @@ personality: Personality;
   }
 
   onSubmit(form) {
-    const updatePersonality: Personality = {
-      PersonalityEntityId: this.personality.PersonalityEntityId,
-      PersonalityType: this.personality.PersonalityType,
+    const updatePersonality: any = {
       Design: form.value.Design,
       Problem: form.value.Problem,
       Picture: form.value.Picture,
@@ -62,7 +61,8 @@ personality: Personality;
       Relationship: form.value.Relationship,
       Independent: form.value.Independent,
       PublicSpeaking: form.value.PublicSpeaking,
-      Quick: form.value.Quick
+      Quick: form.value.Quick,
+      OwnerId: localStorage.getItem('userId')
     };
     this._personalityService.updatePersonality(updatePersonality).subscribe(data => {
       this._router.navigate(['/personality/details']);

@@ -63,7 +63,7 @@ const routes = [
       { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
       { path: 'details', component: PersonalityDetailComponent },
-      { path: 'update/:id', component: PersonalityEditComponent},
+      { path: 'update', component: PersonalityEditComponent},
       { path: 'delete', component: PersonalityDeleteComponent }
     ] 
   },
