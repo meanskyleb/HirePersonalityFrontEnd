@@ -54,14 +54,12 @@ import { JobService } from './services/job.service';
 const routes = [
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {defaultpath: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'admin', component: AdminComponent},
-  {
-
-    path: 'personality', canActivate: [AuthGuard] , children: [
+  {path: 'personality', canActivate: [AuthGuard] , children: [
       { path: 'index', component: PersonalityIndexComponent },
       { path: 'create', component: PersonalityCreateComponent },
       { path: 'details', component: PersonalityDetailComponent },
