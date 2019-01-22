@@ -55,7 +55,7 @@ export class JobUpdateComponent implements OnInit {
     };
     console.log(updateJob);
     this._jobservice.updateJob(updateJob).subscribe(d => {
-      this._router.navigate(['/job']);
+      this._router.navigate(['/job/index']);
     });
   }
 
