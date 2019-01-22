@@ -4,11 +4,10 @@
   "scripts": {
     "ng": "ng",
     "npm": "6.4",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build -prod -aot",
     "start": "serve -s dist"
   },
   "private": true,
